@@ -1,0 +1,12 @@
+.war, .warover {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+}
+.warover {
+  background: #fafafa;
+}
+.war td, .warover td {
+  vertical-align: top;
+}

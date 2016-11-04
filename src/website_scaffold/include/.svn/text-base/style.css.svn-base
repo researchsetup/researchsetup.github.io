@@ -1,0 +1,231 @@
+@import url(http://fonts.googleapis.com/css?family=Lato|Noto+Serif|Magra);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+
+
+html{
+background: white;
+font-family: open sans, helvetica, arial;
+}
+
+body{
+	width: 900px;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FAFAFA;
+  background: white;
+  font-size: 12pt;
+}
+table {
+    font-size: 12pt;
+    border-collapse: 0px;
+}
+table td {
+  padding: 0px;
+}
+
+
+
+a, a:visited {
+  font-weight: 700;
+  font-size: bigger;
+	color: #357097;
+  text-decoration: none;
+}
+
+ul, ol { list-style-position: outside; }
+ul { list-style-type: circle; }
+ol { }
+li { margin-bottom: 0.8em }
+
+h1{
+	position: relative;
+	margin-top: 5ex;
+	font-weight: bold;
+	border-bottom: 1px solid #c7c7c7;
+	font-size: 1.2em;
+}
+
+h2{
+	position: relative;
+	margin-top: 5ex;
+	margin-bottom: 0.5ex;
+	font-size: 1em;
+	font-weight: 600;
+}
+
+h3{
+	position: relative;
+	margin-top: 2ex;
+	margin-bottom: 0.5ex;
+	font-size: 1em;
+	font-weight: 400;
+}
+
+table {
+/*    font-size: 10pt; */
+}
+table.row { }
+table.row td {
+    padding: 10px;
+}
+
+
+
+.header {
+  font-family: "Lato", serif;
+  font-size: 15pt;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	background: #f3f3f3;
+	background: #E8EEF9;
+	background: #a5abc6;
+  background: rgb(84, 131, 182);
+  background: white;
+	padding: 5px;
+  padding-bottom: 0px;
+  color: whitesmoke;
+  color: white;
+  color: bluesteel;
+}
+
+.nav {
+	margin: 0px;
+}
+
+.nav a {
+	margin-right: 5px;
+	color: black;
+  color: whitesmoke;
+  color: white;
+  color; rgb(29, 117, 185);
+  text-decoration: none;
+}
+
+.nav a:visited {
+	color: #333;
+  color: rgb(195, 217, 250);
+  color: rgb(127, 173, 241);
+}
+
+.footer {
+	margin-top: 20px;
+  padding-top: 20px;
+	font-size: 9pt;
+	color: black;
+	text-align: center;
+	padding: 3px;
+	position: relative;
+	clear: both;
+	background: white;
+}
+
+
+.main {
+	margin: 10px;
+  margin-top: 1em;
+}
+
+.main .section {
+  padding-left: 1em;
+}
+
+.main .section p {
+  padding-left: 1em;
+}
+
+
+
+#coverimage {
+  background-image:url('../images/gregory-large.jpg');
+  background-position: 50 -140;
+  background-size: 800;
+  display: block;
+  width: 100%;
+  height: 250px;
+  clear: both;
+}
+#gregory {
+    width: 100px;
+    height: 100px;
+    background-size:cover;
+    background-position: -10 0;
+    background-image:url(../images/gregory.jpg);
+}
+#banana {
+    width: 100px;
+    height: 100px;
+    background-size:cover;
+    background-position: -10 0;
+    background-image:url(../images/banana_bye.png);
+}
+
+#ggscreen { width: 100%; }
+
+#mypic {
+	width: 100px;
+	height: 100px;
+	background-image:url(../images/me.jpg);
+}
+
+#mypic:hover {
+	background-image:url(../images/me_awake.png);
+}
+
+
+
+@media  (max-width:1300px) {
+    body {
+        width: 700px;
+        font-size: 12pt;
+    }
+    table {
+        font-size: 12pt;
+    }
+    #coverimage {
+      background-position: 0 -100;
+      background-size: 680px;
+    }
+}
+
+
+@media  (max-width:900px) {
+    body {
+        width: 500px;
+        font-size: 12pt;
+    }
+    table {
+      font-size: 12pt;
+    }
+    table.row td {
+      padding-left: 0px;
+      padding: 0px;
+    }
+    h1, h2, h3 {
+      margin: 5px;
+      padding: 0px;
+      margin-top: 1em;
+    }
+    li { margin-bottom: 0px; }
+    .main.section {
+      padding-left: .5em;
+    }
+    .main.section.p {
+      padding-left: .5em;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+
+    .header nav {
+      padding-left: 1.5em;
+    }
+    .thumb { display: none; }
+    #coverimage {
+      height: 200px;
+      background-position: 30 -70;
+      background-size: 470px;
+    }
+}
+

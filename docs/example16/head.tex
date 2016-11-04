@@ -1,0 +1,74 @@
+%
+% If insane, use the following to muck with font sizes
+%
+% \usepackage[T1]{fontenc} \usepackage{mathptmx}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{array}
+\usepackage{xspace}
+\usepackage{amsmath,amssymb}
+\usepackage[linesnumbered, ruled,vlined]{algorithm2e}
+
+
+\usepackage{graphicx}
+\usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{enumitem}
+\usepackage{program}
+\usepackage{listings}
+
+\lstset{
+basicstyle=\small\ttfamily,
+stringstyle=\ttfamily,
+numbers=left,
+numberstyle=\footnotesize,
+stepnumber=1,
+numbersep=5pt
+}
+
+
+
+\def\compactify{\itemsep=0pt \topsep=0pt \partopsep=0pt \parsep=0pt}
+\let\latexusecounter=\usecounter
+\newenvironment{CompactItemize}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{itemize}}
+  {\end{itemize}\let\usecounter=\latexusecounter}
+\newenvironment{CompactEnumerate}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{enumerate}}
+  {\end{enumerate}\let\usecounter=\latexusecounter}
+
+
+\newcommand{\sys}{MYSYSTEM\xspace}
+
+\newcommand{\codesize}{\fontsize{7}{8}}
+\newcommand{\ind}{\hspace{\algorithmicindent}}
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+\newcommand{\ie}{i.e., }
+\newcommand{\eg}{e.g., }
+\newcommand{\eat}[1]{}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+
+\newcommand{\todo}[1]{\vspace{20pt}\fbox{\hspace{10pt}\vspace{10pt}#1\hspace{10pt}\vspace{10pt}}\hspace{10pt}\vspace{10pt}}
+\newcommand{\papertext}[1]{#1}
+\newcommand{\techreport}[1]{}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\newtheorem{claim}{Claim}
+\newtheorem{example}{Example}
+
+\renewcommand*{\bibfont}{\small}

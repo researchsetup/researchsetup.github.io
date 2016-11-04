@@ -1,0 +1,10 @@
+{% extends "_base.html" %}
+
+
+{% block main %}
+<div class="post">
+  {% markdown2 %}
+  {{ post }}
+  {% endmarkdown2 %}
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<html>
+   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>{% block title %}YOUR TITLE{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="./include/style.css" />
+    <script src="./include/jquery.js"></script>
+    <script src="./include/handlebars.js"></script>
+    <script src="./include/data.js"></script>
+    <script src="./include/underscore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.13/webcomponents-lite.min.js"></script> 
+  </head>
+<body>
+
+
+<img src="./images/cudbg.png" id="cudbg"/>
+
+
+{% block begin%}{% endblock %}
+
+<div class="main">
+
+  {% block main %}{% endblock %}
+
+</div>
+
+</body>
