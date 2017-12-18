@@ -69,6 +69,16 @@ b, strong {
 }
 
 
+.example {
+  padding: .5em;
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: justify;
+  color: #777;
+  border: 1px solid #f0f0f0;
+  background: #fafafa;
+  font-family: serif;
+}
 
 .callout {
   font-size: 16pt;

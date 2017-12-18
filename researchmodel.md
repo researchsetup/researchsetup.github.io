@@ -7,7 +7,10 @@ tagline:
 
 Grad school and research is a complicated process.  It can be ovewhelming because it's not clear what being a good research means, and what it means to do _good work_.  There is also a lot of advice floating around -- how can one systematically reason about the process?  What's the point?  
 
-This document proposes _a_ model to reason about the role of papers (as a unit of research) in the bigger context, and uses the model as a framing device for many common comments about research and ideas.
+This document proposes _a_ model to reason about the role of papers (as a unit of research) in the bigger context, and uses the model as a framing device for many common comments about research and ideas.  It also includes some examples when the author can think them up.
+
+[Pull requests are appreciated](https://github.com/researchsetup/researchsetup.github.io)
+
 
 #### Caveats
 
@@ -16,6 +19,7 @@ Keep in mind that I am primarily acquainted with computer science, and specifica
  $$\begin{align}
    P(happy) &= P(happy | cat) + P(happy | no cat)\\
           1 &= P(happy) + P(not happy)\end{align}$$
+
 
 
 ## <a name="themodel"></a> TLDR;
@@ -87,7 +91,7 @@ Vision
 
 
 <div style="text-align:center; font-weight: bold; font-size: 15pt;">
-Takeaway: Excellent PhD programs/advisors  nurture ideas and vision.
+Takeaway: Excellent PhD programs/advisors nurture ideas and vision.
 </div>
 
 
@@ -97,9 +101,9 @@ In this section, we interpret many aspects of research in terms of maximizing $E
 
 ### Communication
 
-There is a commonly held ideal to "let the work speak for itself", meaning that good work will be recognized and appreciated.   That is true if the goodness measure is fame.  It is not true if the definition is change in society, policy, lives, or even other researchers' habits and tools.  Consider an outcome $o$ for paper $p$, then $P(o\|p)$ ignores important latent variables!  Let's consider a few.
+There is a commonly held ideal to "let the work speak for itself", meaning that good work will be recognized and appreciated.  It implicitly discourages communication if the measure of impact is fame.    But what if we care about impact in terms of changing society, policy, lives, or even other researchers' habits and tools.  Consider an outcome $o$ for paper $p$, then $P(o\|p)$ ignores important latent variables!  Let's consider one instance.
 
-Papers are a manifestation of an idea that can contribute to another researcher $r$'s approach towards research.  Let the outcome be that $r$ adopts the paper's ideas in a productive way, meaning that we want the following to be high:
+Papers are a manifestation of an idea that can contribute to another researcher $r$'s research impact.  Let the outcome be that $r$ adopts the paper's ideas in a productive way, meaning that we want the following to be high:
 
 $$P(Impact | r) P(r\ understands\ p|r\ reads\ p) P(r\ reads\ p)$$
  
@@ -127,6 +131,7 @@ Both are suboptimal because it distracts from other impactful work (the first ca
 
 Why are papers undermarketed?  My hypothesis is that $P(Impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
 
+
 ### Partial Information
 
 Clearly, we don't have access to all possible outcomes $\mathbb{O}$.  Instead, each researcher $r$ imagines a small subset $\mathbb{O}_r \subseteq \mathbb{O} $ of possible outcomes.  Hopefully, the imagined outcomes are positive: 
@@ -142,14 +147,17 @@ $$E[Impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}} o\times P(o|p) - \sum_{o\
 
 Ignoring $\mathbb{O}_{-}$ often leads to a crisis of conscience.   This is not at all unique to researchers.  There are [many examples](https://www.youtube.com/watch?v=PMotykw0SIk).
 
+{:.example}
+The recent research in [automatically generating lipsynced videos](https://www.youtube.com/watch?v=9Yq67CjDqvw) is arguably a technology that can have deeply negative consequences.  One reason is that it makes it so easy to generate realistic-seeming videos that it fundamentally sheds doubt on what evidence can be believed.  The amount of doctored videos can be generated at a higher rate than people can discern and verify them, and encourage people to simply give up and not trust any evidence.
 
 
 ### Least Publishable Units
 
 Least publishable units (LPUs) are papers that are technically correct, and shows something new but not really meaningful.  These are papers for which any combination of the following hold:
 
-* $P(assump) \approx 0$ 
-* $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$
+* $P(assump) \approx 0$ meaning the problem is made up.
+* $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$  meaning it doesn't have a lot of positive outcomes.
+* $P(evid)\approx 1$  meaning the evidence is blindingly obvious.
 
 
 ### Assistant Professorship
