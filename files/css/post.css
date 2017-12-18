@@ -1,0 +1,179 @@
+html {
+  font-family: "Open Sans", georgia, helvetica, arial;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: Lora; 
+  line-height: 30pt;
+  margin-bottom: 2em;
+}
+h1 #logo {
+  float:left; font-size: 50pt;
+}
+h1 #tagline {
+  margin-top: -3pt;
+  float:left; font-size: 17pt; line-height: 19pt; padding-left: 1em; color: #aaa;
+}
+h2 {
+  margin-top: 2em;
+  font-family: "Raleway";
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+h4 {
+  margin-top: 2em;
+  font-family: "Raleway";
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+a {
+  text-decoration: none;
+  color: hsla(200, 70%, 55%, 1);
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  background: hsla(200, 70%, 55%, 1);
+}
+
+code {
+  font-family: Consolas, monospace, courier;
+}
+
+
+body {
+  background: white;
+  padding: 65px;
+  padding-top: 50px;
+  min-width:600px;
+  width: 80%;
+  line-height: 20pt;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+b, strong {
+  color: #555;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1.5em;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+
+.callout {
+  font-size: 16pt;
+  text-align: center;
+  letter-spacing: 2px;
+  color: gray;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+
+.fig {
+}
+
+.subfig{
+  width: 18%;
+  min-width: 180px;
+  float: left;
+}
+.subfig img {
+  width: 150px;
+}
+.subfig p {
+  text-align: center;
+  width: 90%;
+  font-family: "Computer Modern", serif;
+  color: grey;
+}
+
+ol {
+  list-style-position: outside;
+  padding: 0px;
+}
+
+ul {
+  list-style-position: outside;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;
+}
+
+@media  (max-width:1300px) {
+}
+
+
+
+@media  (max-width:900px) {
+  h4 {
+    margin-top: 2em;
+    font-size: 14pt;
+  }
+  .stitle {
+    text-align: left;
+  }
+  .header div {
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr9bm1CRD8Ne_KjP89kA3_zOrHj8E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/UC3ZEjagJi85gF9qFaBgIN4KoCs5_BuQksQmhwRAS2Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/bAULWXoql4X5j5Aw1uK9-xTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/XXbc_aQtUtjJrkp7pYGEKhTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/rAXKWvABQNHjPUk26ixVvvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+
