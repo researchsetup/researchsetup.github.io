@@ -95,7 +95,7 @@ Takeaway: Excellent PhD programs/advisors  nurture ideas and vision.
 
 In this section, we interpret many aspects of research in terms of maximizing $E[Impact\|p]$.
 
-**Communication**
+### Communication
 
 There is a commonly held ideal to "let the work speak for itself", meaning that good work will be recognized and appreciated.   That is true if the goodness measure is fame.  It is not true if the definition is change in society, policy, lives, or even other researchers' habits and tools.  Consider an outcome $o$ for paper $p$, then $P(o\|p)$ ignores important latent variables!  Let's consider a few.
 
@@ -109,7 +109,7 @@ We cannot really control the first term directly, but the other two terms are im
 2. $P(r\ understands\ p)$.    $r$ has been convinced to read your paper!  Will it be easy for her to figure out what your paper is saying?  This is about writing clearly, thoroughly, and unambiguously, so that $r$ can take your ideas and techniques and actually use them.  This is also why examples are important to illustrate applications of your techniques/ideas.
 
 
-**Marketing**
+#### Marketing
 
 Let's look into $P(r\ reads\ p)$ a bit, since marketing can be a slightly sensitive issue.  We can break it into two terms:
 
@@ -127,13 +127,13 @@ Both are suboptimal because it distracts from other impactful work (the first ca
 
 Why are papers undermarketed?  My hypothesis is that $P(impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
 
-**Partial Information**
+### Partial Information
 
 Clearly, we don't have access to all possible outcomes $\mathbb{O}$.  Instead, each researcher $r$ imagines a small subset $\mathbb{O}_r \subseteq \mathbb{O} $ of possible outcomes.  Hopefully, the imagined outcomes are positive: 
 $$\sum_{o \in \mathbb{O}_r} o \gg 0$$
 The optimization for selecting what research to pursue is based on the researcher's $\mathbb{O}_r$, which is colored by experiences, education, etc, and contributes to what people call "vision".
 
-**Unintended Outcomes**
+### Unintended Outcomes
 
 Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to focusing only on $P(p \| you)$ or positive outcomes.  It's generally a good idea to make sure of the following, assuming $\mathbb{O}^{+}$ and $\mathbb{O}^{-}$ are good and bad outcomes:
 
@@ -144,22 +144,22 @@ Ignoring $\mathbb{O}_{-}$ often leads to a crisis of conscience.   This is not a
 
 
 
-**Least Publishable Units**
+### Least Publishable Units
 
 Least publishable units (LPUs) are papers that are technically correct, and shows something new but not really meaningful.  These are papers for which any combination of the following hold:
 
 * $P(assump) \approx 0$ 
-* $P(g \| p) \approx 0$ for $g\in goodoutcomes$
+* $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$
 
 
-**Assistant Professorship**
+### Assistant Professorship
 
 Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) P(evid\|you) \approx 1$, meaning that you are able to execute on a research problem correctly.   In this vein,the assistant professorship selects for, and gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some community decided threshold $\tau$:
 
 $$\sum_{p \in \mathbb{P}} E[Impact | p] > \tau$$
 
 
-**Following the Crowd**
+### Following the Crowd
 
 Following the crowd means that $P(assum\| now) \approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve.  In otherwords,  $\mathbb{O}_{r'} \approx \mathbb{O}_r$ for two researchers $r$ and $r'$.  
 
@@ -175,21 +175,38 @@ In this setting, one hopes that $P(evid \| you) \gg P(evid \| r')$ so that you c
 $$P(p|you)$$
 -->
 
-**Perfection is the enemy of progress**
+### Perfection is the enemy of progress
 
 It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[Impact\|p]$ will actually increase.
 
 
-**Hard problems vs Simple problems**
+### Hard problems vs Simple problems
 
 
 Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor.  A hard problem is a paper where $P(evid\|r)\approx 0$ for nearly all researchers $r$.  Solving it somewhat implies that you can solve other hard problems.
 
 Hopefully by this point, it is obvious why problem hardness does not necessarily imply impact.  It ignores whether or not the problem even matters, $P(o\|p)$, and whether or not it is practical $P(assum)$.  This is why working on simple problems is totally fine, if it is carefully selected to maximize $E[Impact\|p]$.
 
-**Academia vs Industry**
+### Why Academia?
 
-It is a perennial question whether research is best done in industry or in academia.
+Presumably, you are in a research program because you believe _doing research_ is the best way to maximize this probability:
+
+$$E[Impact | you] = E[Impact | your\ research] + E[Impact | non\ research\ stuff]$$
+
+Clearly there is a strong assumption of the following, based on your subset of desired outcomes $\mathbb{O}_r$.
+
+$$E[Impact | your\ research] \gg E[Impact | non\ research\ stuff]$$
+
+
+For some people, it turns out this assumption is not true, and it is better to leave research and do _real work_. This is primarly because $E[Impact \| non\ research\ stuff] \gg E[Impact \| your\ research]$.  For instance, it can be joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  All of these are totally totally cool.
+
+Some may try to suggest that you're not "cut out" for research, implying that $P(evid \| you) \rightarrow 0$.  Hopefully at this point you would agree that it's a narrow (sic. stupid) measure.  Don't listen to them.
+
+
+
+### Academia vs Industry
+
+Finally, a comment about doing research in academia vs industry.  Arguably, industry has way more resources than academics, so academics should be selective about the class of papers $p$ to work on.  In other words, we can assume that for the most part, $P(evid\|industry)\gg P(evid\|you)$, however industry has pressure to show short-term results.  Thus, the ideal class of problems are ones where $P(assum \| now) \approx 0$ and $P(assum\|future) \approx 1$.  Here's a made up diagram:
 
 <img src="./files/images/researchmodel.png" width="300px"/>
 
@@ -215,21 +232,6 @@ This could be really anything and is a personal decision.  It could be:
 This is too general, so let us decompose it into elements under your control and in the context of research.  First, the focus is on `you`:
 
         P(good | you)
-
-Presumably, you are in a research program because you believe _doing research_ is the best way to maximize this probability:
-
-        P(good | you) = P(good | research) P(research | you) 
-                        + 
-                        P(good | nonresearch) P(nonresearch | you)
-
-With the strong assumption that:
-
-        P(good | research) >> P(good | nonresearch)
-
-For some people, it turns out this assumption is not true, and it is better to leave research and do _real work_.
-Typically it is more due to `P(good | nonresearch) >> P(good | research)` than `P(research | you) -> 0` as some would imply.
-
-Arguably, there are many many avenues where this is the case: joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  That is totally cool.
 
 For the purposes here, you have chosen research, so let us assume `P(nonresearch | you) -> 0`:
 

@@ -50,7 +50,7 @@ body {
   padding: 65px;
   padding-top: 50px;
   min-width:600px;
-  width: 80%;
+  width: 90%;
   line-height: 20pt;
   max-width: 750px;
   margin-left: auto;
@@ -110,6 +110,21 @@ ul {
 li {
   margin: 0px;
   padding: 0px;
+}
+
+#footer {
+  margin-top: 2em;
+  border-top: 1px solid gray;
+  text-align: center;
+  color: gray;
+}
+#footer a{
+  color: gray;
+}
+#footer a:hover{
+  color: gray;
+  text-decoration:underline;
+  background: white;
 }
 
 @media  (max-width:1300px) {
