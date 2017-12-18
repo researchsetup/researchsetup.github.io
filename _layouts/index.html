@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+
+
+
+
+<h1>
+  <span id="tagline">{{page.tagline}}</span>
+  <div style="clear=both;width:100%;">&nbsp;</div>
+</h1>
+
+{{content}}
+
+
+<div id="footer">
+  <a href="http://www.eugenewu.net">eugene wu</a> 2017
+</div>
+
+<link rel="stylesheet" type="text/css" href="./files/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="./files/css/post.css" />
+
+<style>
+html { background: {{page.color}}; }
+#logo, h2 { color: {{page.color}}; }
+a { color: {{page.color}}; }
+a:hover { color: white; background: {{page.color}}; }
+</style>
+
+</html>
+
+<script>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
