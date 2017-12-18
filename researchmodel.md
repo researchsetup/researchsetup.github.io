@@ -44,8 +44,8 @@ $$\definecolor{blue}{RGB}{18,110,213}
 $$
 
 $$E[Impact | p] = 
-\blue{P(p | evid, assump) P(evid | you)} 
-\red{P(assump)}
+\blue{P(p | evid, assum) P(evid | you)} 
+\red{P(assum)}
 \red{\sum_{o \in \mathbb{O}} o\times P(o | p)}
 $$
 
@@ -54,13 +54,13 @@ $$
 
 **Correctness: is the paper believable?**
 
-$\blue{P(p \| evid, assump)}$ defines whether the evidence is good enough to prove the claim.  This is called experimental design and it should be 1.
+$\blue{P(p \| evid, assum)}$ defines whether the evidence is good enough to prove the claim.  This is called experimental design and it should be 1.
 
 $\blue{P(evid \| you)}$ is called _conducting research_ and should be close to 1.  
 
 **Impact: does the paper matter?**
 
-$\red{P(assump)}$ defines the scope of the applicability.  Understanding the market, trends, talking to practitioners increases the probability of picking a problem where the assumptions hold.
+$\red{P(assum)}$ defines the scope of the applicability.  Understanding the market, trends, talking to practitioners increases the probability of picking a problem where the assumptions hold.
 
 $\red{o\times P(o \| p)}$ defines the belief about whether or not the outcome $\red{o}$ is meaningful and how much the paper will increase its likelihood $\red{P(o \| p)}$.   
 
@@ -155,7 +155,7 @@ The recent research in [automatically generating lipsynced videos](https://www.y
 
 Least publishable units (LPUs) are papers that are technically correct, and shows something new but not really meaningful.  These are papers for which any combination of the following hold:
 
-* $P(assump) \approx 0$ meaning the problem is made up.
+* $P(assum) \approx 0$ meaning the problem is made up.
 * $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$  meaning it doesn't have a lot of positive outcomes.
 * $P(evid)\approx 1$  meaning the evidence is blindingly obvious.
 
