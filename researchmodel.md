@@ -22,7 +22,7 @@ I am primarily acquainted with computer science, and specifically [data manageme
 
 
 
-## <a name="themodel"></a> TLDR;
+## <a name="themodel"></a> The Model
 
 Here, we assume a paper as the unit of research and build a simple model of the expected positive impact $E[Impact\|p]$ of a paper $p$.  
 
@@ -121,7 +121,7 @@ In this section, we interpret many aspects of research in terms of maximizing $E
 
 There is a commonly held ideal to "let the work speak for itself", meaning that good work will be recognized and appreciated.  It implicitly discourages communication if the measure of impact is fame.    But what if we care about impact in terms of changing society, policy, lives, or even other researchers' habits and tools.  Consider an outcome $o$ for paper $p$, then $P(o\|p)$ ignores important latent variables!  Let's consider one instance.
 
-Papers are a manifestation of an idea that can contribute to another researcher $r$'s research impact.  Let the outcome be that $r$ adopts the paper's ideas in a productive way, meaning that we want the following to be high:
+Papers are a manifestation of an idea that can contribute to another researcher $r$'s research impact.  Let the outcome be the probability that $r$ adopts the paper's ideas in an impactful way, meaning that we want the following to be high:
 
 $$P(Impact | r) P(r\ understands\ p|r\ reads\ p) P(r\ reads\ p)$$
  
