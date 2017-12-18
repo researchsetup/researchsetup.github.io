@@ -2,11 +2,22 @@ html {
   font-family: "Open Sans", georgia, helvetica, arial;
   font-weight: 300;
 }
-
+body {
+  background: white;
+  padding: 25px;
+  min-width:600px;
+  width: 95%;
+  line-height: 20pt;
+  /*max-width: 750px;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 h1 {
   font-family: Lora; 
   line-height: 30pt;
-  margin-bottom: 2em;
+  margin-top: 3em;
 }
 h1 #logo {
   float:left; font-size: 50pt;
@@ -29,6 +40,9 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+p {
+  font-size: 14pt;
+}
 a {
   text-decoration: none;
   color: hsla(200, 70%, 55%, 1);
@@ -45,19 +59,7 @@ code {
 }
 
 
-body {
-  background: white;
-  padding: 65px;
-  padding-top: 50px;
-  min-width:600px;
-  width: 90%;
-  line-height: 20pt;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
+
 b, strong {
   color: #555;
   font-weight: 300;
@@ -68,6 +70,16 @@ b, strong {
   display: block;
 }
 
+table.vartable {
+  width: 85%;
+  font-family: "Open Sans", georgia, helvetica, arial;
+  font-weight: 300;
+}
+table.vartable td {
+  vertical-align: top;
+  padding-right: 1em;
+  padding-top: 5px;
+}
 
 .example {
   padding: .5em;
@@ -137,7 +149,15 @@ li {
   background: white;
 }
 
-@media  (max-width:1300px) {
+.sidebar {
+  position: fixed;
+}
+
+
+@media  (max-width:992px) {
+  .sidebar {
+    position: relative;
+  }
 }
 
 

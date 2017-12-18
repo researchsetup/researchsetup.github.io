@@ -5,26 +5,26 @@ tagline:
 
 # Bayesian Model of Research and the PhD
 
-Grad school and research is a complicated process.  It can be ovewhelming because it's not clear what being a good research means, and what it means to do _good work_.  There is also a lot of advice floating around -- how can one systematically reason about the process?  What's the point?  
+Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher means, and what it means to do [good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).  There is also a lot of advice floating around -- how can one systematically reason about the process?  
 
-This document proposes _a_ model to reason about the role of papers (as a unit of research) in the bigger context, and uses the model as a framing device for many common comments about research and ideas.  It also includes some examples when the author can think them up.
+This document proposes _a_ model to reason about the role of papers (as a simplified unit of research) in the bigger context, and uses the model as a framing device to comment about research and ideas.  It also includes some examples when the author can think them up.  My hope is that you get bored of the document mid-way because it's blindingly obvious.  
 
-[Pull requests are appreciated](https://github.com/researchsetup/researchsetup.github.io)
+[Pull requests and issues are appreciated!](https://github.com/researchsetup/researchsetup.github.io)
 
 
 #### Caveats
 
-Keep in mind that I am primarily acquainted with computer science, and specifically data management and visualization.  I know just enough modeling to understand that 
+I am primarily acquainted with computer science, and specifically [data management and visualization](http://cudbg.github.io/lab).  The document has a very loose interpretation of "model".  Besides, I barely know enough to understand:
 
  $$\begin{align}
-   P(happy) &= P(happy | cat) + P(happy | no cat)\\
+   P(happy) &= \frac{P(happy | cat) \times P(cat)}{P(cat | happy)}\\
           1 &= P(happy) + P(not happy)\end{align}$$
 
 
 
 ## <a name="themodel"></a> TLDR;
 
-Here, we assume a paper as the unit of research and build a simple model of the expected positive impact $E[Impact\|p]$ of a paper $p$.   See [the appendix below](#appendix) for background and context of the model.
+Here, we assume a paper as the unit of research and build a simple model of the expected positive impact $E[Impact\|p]$ of a paper $p$.  
 
 Consider all possible outcomes $\mathbb{O}$, where $o\in\mathbb{O}$ is _some_ goodness value for a possible future $o$.  For example, $o$ could be a product, and goodness could be amount of money you make, social equality, happiness, whatever you want.   We could add up all possible outcomes weighed by how probable they are if the paper is written:
 
@@ -67,37 +67,55 @@ $\red{o\times P(o \| p)}$ defines the belief about whether or not the outcome $\
 
 
 
-## Main Takeaways
+# Takeaways
+
+There are many takeaways that we can make based studying the above optimization problem.  I group them into "things related to the PhD", and "things in general".
+
+## PhD Takeaways
 
 
-The PhD, at minimum, is a certification that
+#### PhD as Certification
+
+The PhD is not magical.  You should think of it as certifying that you have _sufficient_ knowledge to conduct research. In other words, that :
 
 * $P(evid \| you) > threshold$ and $P(p \| evid) \approx 1$
 * Taking courses, coding, reading papers, getting criticism are all for this
 
+#### Vision and Ideas
+
 Since we expect $P(p\|evid,assum)P(evid\|you)\approx 1$, when researchers primarily differ based on the red part of the model.  This is driven by taste (e.g., what _good_ means to you).    This boils down to the quality of the ideas, and the researcher's vision.
 
 
-Ideas
+Ideas: identifying great outcomes that research can contribute.
 
-* Identifying an idea where $P(o \| p) \approx 1$ is very very hard thus this *must be nurtured and encouraged.* 
+* Identifying an idea where the outcome is great ($o\gg 0$) and for which the research greatly contributes to ($P(o \| p) \gg P(o\|!p)$ is very very hard
+* The advisor and community should *nurture and encourage* coming up with good ideas because good ideas are not obvious and fragile.
 * Accept that _good_ can have many definitions.  Some argue that a liberal arts degree helps pick meaningful definitions of _good_. 
 
-Vision 
+Vision: can you anticipate the future?
 
-* Having vision can take several forms
-	* $P(assum \| future) \gg P(assum \| now)$  means you can see that assumptions that currently do not hold will in the future.  For instance, foreseeing technology trends.
-  * ability to estimate a large subset of $goodoutcomes$ 
+* $P(assum \| future) \gg P(assum \| now)$  means you can see that assumptions that currently do not hold will in the future.  For instance, foreseeing technology trends.
+* Ability to estimate a large subset of outcomes $\mathbb{O}_{you} \subset \mathbb{O}$ 
 
 
-<div style="text-align:center; font-weight: bold; font-size: 15pt;">
+<div style="margin-top: 2em; text-align:center; font-weight: bold; font-size: 15pt;">
 Takeaway: Excellent PhD programs/advisors nurture ideas and vision.
 </div>
 
 
-## Further Takeaways
+#### Applying for a PhD
 
-In this section, we interpret many aspects of research in terms of maximizing $E[Impact\|p]$.
+It is clear that one hopes to admit graduate students that have the capacity to work on research that have high $E[Impact\|p]$.  Faculty reviewers naturally seek to estimate each of the model terms from the application and interviews.   
+
+The quantifiable ones that are easier to measure are also what the PhD certifies: $P(o\|evid,assum)P(evid\|you)$.  If you have done past research or complex projects, they can be used to demonstrate _technical competence_.  This simply means it is more likely that you can learn and complete projects of interest.    This doesn't mean you need to know everything - that's the purpose of taking relevant classes, working on starter research projects, and interning.    If you assume that faculty are risk adverse, they will look for students with enough samples to better estimate $P(o\|evid,assum)P(evid\|you)$.
+
+The intangible components are related to ideas and vision.  This is part of the value of the essay.    It is harder to illustrate this unless you have led projects in the past.  If this is the case, describe the positive outcomes enabled by your work!   Show that you have vision by remarking about assumptions that may change in the future ($P(assum\|future)\gg P(assum\|now)$), outcomes that people are not thinking about ($\mathbb{O}_{you}$), or techniques that people are not thinking of that would dramatically boost the ability to gather evidence for important problems $P(evid\|researchers)$.
+
+
+
+## General Comments
+
+In this section, we interpret many aspects of research in terms of maximizing $E[Impact\|p]$.  We assume that you have a PhD certificate, meaning $P(evid\|you) \times P(p\|evid,assum) \approx 1$.
 
 ### Communication
 

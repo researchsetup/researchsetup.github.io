@@ -11,13 +11,24 @@
   <div style="clear=both;width:100%;">&nbsp;</div>
 </h1>
 
-{{content}}
+<div class="row">
+  <div class=" col-md-4 sidebar">
+    <div>
+    {% capture vars %}{% include vars.md %}{% endcapture %}
+    {{ vars | markdownify }}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-4">
+    {{content}}
+  </div>
+</div>
 
 
 <div id="footer">
   <a href="http://www.eugenewu.net">eugene wu</a> 2017
 </div>
 
+<link rel="stylesheet" type="text/css" href="./files/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="./files/css/post.css" />
 
 <style>
