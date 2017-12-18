@@ -101,7 +101,7 @@ There is a commonly held ideal to "let the work speak for itself", meaning that 
 
 Papers are a manifestation of an idea that can contribute to another researcher $r$'s approach towards research.  Let the outcome be that $r$ adopts the paper's ideas in a productive way, meaning that we want the following to be high:
 
-$$P(impact | r) P(r\ understands\ p|r\ reads\ p) P(r\ reads\ p)$$
+$$P(Impact | r) P(r\ understands\ p|r\ reads\ p) P(r\ reads\ p)$$
  
 We cannot really control the first term directly, but the other two terms are important:
 
@@ -120,12 +120,12 @@ $$P(r\ reads\ p) = P(aware\ of\ p) P(buys\ p's\ ideas)$$
 
 Viewing "marketing" through an optimization lens helps us think about two common types of sub-optimal strategies (since $P(buys\ p's\ ideas)\approx1$):  
 
-1. $P(aware\ of\ p)\gg P(impact \| r)$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
-2. $P(aware\ of\ p)\ll P(impact \| r)$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketing enough for people to know about it.   
+1. $P(aware\ of\ p)\gg P(Impact \| r)$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
+2. $P(aware\ of\ p)\ll P(Impact \| r)$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketing enough for people to know about it.   
 
 Both are suboptimal because it distracts from other impactful work (the first case), or deprives others from doing impactful work (the second case).  I consider the second case a bigger issue because it is more widespread and requires training.  
 
-Why are papers undermarketed?  My hypothesis is that $P(impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
+Why are papers undermarketed?  My hypothesis is that $P(Impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
 
 ### Partial Information
 
@@ -137,7 +137,7 @@ The optimization for selecting what research to pursue is based on the researche
 
 Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to focusing only on $P(p \| you)$ or positive outcomes.  It's generally a good idea to make sure of the following, assuming $\mathbb{O}^{+}$ and $\mathbb{O}^{-}$ are good and bad outcomes:
 
-$$E[impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}} o\times P(o|p) \right) \gg 0 $$
+$$E[Impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}} o\times P(o|p) \right) \gg 0 $$
 
 
 Ignoring $\mathbb{O}_{-}$ often leads to a crisis of conscience.   This is not at all unique to researchers.  There are [many examples](https://www.youtube.com/watch?v=PMotykw0SIk).
