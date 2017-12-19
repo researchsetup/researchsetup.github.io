@@ -3,7 +3,7 @@ layout: post
 tagline:
 ---
 
-# Bayesian Model of Research and the PhD
+# A "Probabilistic" Model of Research
 
 Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher means, and what it means to do [good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).  There is also a lot of advice floating around -- how can one systematically reason about the process?  
 

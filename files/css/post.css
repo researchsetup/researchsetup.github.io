@@ -40,6 +40,9 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+.MathJax_Display {
+  font-size: 14pt;
+}
 p {
   font-size: 14pt;
 }
