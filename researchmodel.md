@@ -3,52 +3,54 @@ layout: post
 tagline:
 ---
 
-# A "Probabilistic" Model of Research
-
-Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher means, and what it means to do [good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).  There is also a lot of advice floating around -- how can one systematically reason about the process?  
-
-This document proposes _a_ model to reason about the role of papers (as a simplified unit of research) in the bigger context, and uses the model as a framing device to comment about research and ideas.  It also includes some examples when the author can think them up.  My hope is that you get bored of the document mid-way because it's blindingly obvious.  
-
-[Pull requests and issues are appreciated!](https://github.com/researchsetup/researchsetup.github.io)
-
-
-#### Caveats
-
-I am primarily acquainted with computer science, and specifically [data management and visualization](http://cudbg.github.io/lab).  The document has a very loose interpretation of "model".  Besides, I barely know enough to understand:
-
- $$\begin{align}
-   P(happy) &= \frac{P(happy | cat) \times P(cat)}{P(cat | happy)}\\
-          1 &= P(happy) + P(not happy)\end{align}$$
-
-
-
-## <a name="themodel"></a> The Model
-
-Here, we assume a paper as the unit of research and build a simple model of the expected positive impact $E[Impact\|p]$ of a paper $p$.  
-
-Consider all possible outcomes $\mathbb{O}$, where $o\in\mathbb{O}$ is _some_ goodness value for a possible future $o$.  For example, $o$ could be a product, and goodness could be amount of money you make, social equality, happiness, whatever you want.   We could add up all possible outcomes weighed by how probable they are if the paper is written:
-
-$$E[Impact | p] =  P(p) \sum_{o \in \mathbb{O}} o\times P(o | p)$$
-
-As a researcher, you want to pick the best paper $p^\*$ that maximizes $E[Impact\|p^*]$.  
-
-Here, $P(p)$ is the probability that the paper's claims actually hold.   This hinges on  your ability to collect evidence $evid$ to support the claims and the paper's assumptions $assum$ being true:  
-
-$$P(p) = P(p | evid, assum) P(evid | you) P(assum)$$
-
-To summarize, the impact of a paper is:
 
 $$\definecolor{blue}{RGB}{18,110,213}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 $$
 
-$$E[Impact | p] = 
+
+# A "Probabilistic" Model of Research
+
+Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher means, and what it means to do [good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).  There is also a lot of advice floating around -- how can one systematically reason about the process?  
+
+This document proposes one possible model that I use to reason about research.  I then use the model as a framing device to comment about research and ideas.  It also includes some examples when the author can think them up.  My hope is that you get bored of the document mid-way because it's blindingly obvious.  
+
+[Pull requests and issues are appreciated!](https://github.com/researchsetup/researchsetup.github.io)
+
+
+#### Caveats
+
+I am primarily acquainted with computer science, and specifically [data management and visualization](http://cudbg.github.io/lab).  I have a very loose interpretation of "model", since I barely understand:
+
+ $$\begin{align}
+   P(happy) &= \frac{P(happy | cat) \times P(cat)}{P(cat | happy)}\\
+          1 &= P(happy) + P(not happy)\end{align}$$
+
+
+## <a name="themodel"></a> The Model
+
+For simplicity, we assume a paper as the unit of research and build a model of the expected positive impact $E[impact\|p]$ of a paper $p$.  
+
+Consider all possible outcomes $\mathbb{O}$, where $o\in\mathbb{O}$ is _some_ goodness value for a possible future $o$.  For example, $o$ could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc. Let $\mathbb{O}_p\subseteq \mathbb{O}$ be the subset of outcomes that are affected by the paper.   We could add up all possible outcomes weighed by how probable they are if the paper is written:
+
+$$E[impact | p] =  P(p) \sum_{o \in \mathbb{O}_p} o\times P(o | p)$$
+
+
+
+$P(p)$ is the probability that the paper's claims actually hold.   This hinges on  your ability to collect evidence $evid$ to support the claims and the paper's assumptions $assum$ being true:  
+
+$$P(p) \approx P(p | evid, assum) P(evid | you) P(assum)$$
+
+
+
+To summarize, the impact of a paper is:
+
+$$E[impact | p] = 
 \blue{P(p | evid, assum) P(evid | you)} 
 \red{P(assum)}
-\red{\sum_{o \in \mathbb{O}} o\times P(o | p)}
+\red{\sum_{o \in \mathbb{O}_p} o\times P(o | p)}
 $$
-
 
 
 
@@ -64,6 +66,22 @@ $\red{P(assum)}$ defines the scope of the applicability.  Understanding the mark
 
 $\red{o\times P(o \| p)}$ defines the belief about whether or not the outcome $\red{o}$ is meaningful and how much the paper will increase its likelihood $\red{P(o \| p)}$.   
 
+### Research as Optimization
+
+Of course, you  only have a limited view of the possible outcomes of your own work!  In otherwords, $\mathbb{O}_{you} \subset \mathbb{O}$.  It is very likely that you cannot imagine all but a small number of the possible outcomes:
+
+$$\begin{align}
+|\mathbb{O}_{you}| &\ll \mathbb{O}_p\\
+\mathbb{O}_{you} &\not\subseteq \mathbb{O}_p
+\end{align}$$
+
+
+Thus, the optimization problem is simple.  <small>(Note that the input is $\mathbb{O}_r$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$)</small>
+
+<center style="font-size: 15pt">
+Given $\mathbb{O}_r$, pick the best paper $p^*$ that maximizes $E[impact|p^*]$.    
+</center>
+
 
 
 
@@ -76,17 +94,24 @@ There are many takeaways that we can make based studying the above optimization 
 
 #### PhD as Certification
 
-The PhD is not magical.  You should think of it as certifying that you have _sufficient_ knowledge to conduct research. In other words, that :
+The PhD is not magical.  You should think of it as certifying that you have _sufficient_ knowledge to conduct research. In other words, given a $p$ and $assum$, you can ensure that:
 
-* $P(evid \| you) > threshold$ and $P(p \| evid) \approx 1$
-* Taking courses, coding, reading papers, getting criticism are all for this
+$$\begin{align}
+\blue{P(evid | you)} &> threshold\\
+\blue{P(p | evid)} &\approx 1
+\end{align}$$
 
-#### Vision and Ideas
+Usually, it also certifies that you can pick _some_ paper $p$ to write and argue that it is a good idea.  This means that you can articulate $\mathbb{O}_p$
 
-Since we expect $P(p\|evid,assum)P(evid\|you)\approx 1$, when researchers primarily differ based on the red part of the model.  This is driven by taste (e.g., what _good_ means to you).    This boils down to the quality of the ideas, and the researcher's vision.
+An important purpose of taking courses, coding, doing internships, mentorship, reading papers, getting criticism is improving these terms.
 
 
-Ideas: identifying great outcomes that research can contribute.
+#### Ideas, Novelty, Vision 
+
+Assuming you're "certified", researchers primarily differ based on the red part of the model.  This is driven by taste (e.g., what _good_ means to you).    This boils down to the quality of the ideas, and the researcher's vision.
+
+
+Ideas: identifying great outcomes
 
 * Identifying an idea where the outcome is great ($o\gg 0$) and for which the research greatly contributes to ($P(o \| p) \gg P(o\|!p)$ is very very hard
 * The advisor and community should *nurture and encourage* coming up with good ideas because good ideas are not obvious and fragile.
@@ -105,7 +130,7 @@ Takeaway: Excellent PhD programs/advisors nurture ideas and vision.
 
 #### Applying for a PhD
 
-It is clear that one hopes to admit graduate students that have the capacity to work on research that have high $E[Impact\|p]$.  Faculty reviewers naturally seek to estimate each of the model terms from the application and interviews.   
+It is clear that one hopes to admit graduate students that have the capacity to work on research that have high $E[impact\|p]$.  Faculty reviewers naturally seek to estimate each of the model terms from the application and interviews.   
 
 The quantifiable ones that are easier to measure are also what the PhD certifies: $P(o\|evid,assum)P(evid\|you)$.  If you have done past research or complex projects, they can be used to demonstrate _technical competence_.  This simply means it is more likely that you can learn and complete projects of interest.    This doesn't mean you need to know everything - that's the purpose of taking relevant classes, working on starter research projects, and interning.    If you assume that faculty are risk adverse, they will look for students with enough samples to better estimate $P(o\|evid,assum)P(evid\|you)$.
 
@@ -113,9 +138,78 @@ The intangible components are related to ideas and vision.  This is part of the 
 
 
 
+### Reviewing and Reading Papers
+
+You will read and present many papers throughout your PhD.  Eventually you will have the opportunity to review papers.  The two activites overlap a lot, so I'll mainly describe this subsection in terms of paper reviewing.
+
+Reviewing is checking that $E[impact\|p]$ is high enough for the paper, with a correctness constraint.  It's important that published papers satisfy $\blue{P(p\|evid,assum)P(evid)}\approx 1$.  It would be embarassing to you and the community if factually inaccurate papers slip through the cracks.    You are also checking that the assumptions actually hold ($\red{P(assum)} > 0$).  These can take time but are largely "mechanical".
+
+
+The hard part is evaluating that the paper's ideas _could_ have desirable outcomes above some threshold $\tau$: 
+
+$$\red{\sum_{o\in\mathbb{O}_p} o\times P(o | p)} > \tau$$
+
+The threshold $\tau$ is ill defined, but generally "higher-tier" venues have a higher threshold than lower tier venues.  Since it is ill-defined, a common reason to reject a paper is that the paper lacks "originality" or the "contribution is too small".  This can be because the outcomes $\mathbb{O}_p$ are not clearly spelled out, or the connection between the paper's ideas and the outcomes are unclear $P(o\|p) = ?$
+
+This is where it's important to stop yourself from viewing the submission from an adversarial perspective!  If you could imagine positive outcomes that fall out from the paper, _even if the authors missed them_, then the paper could be worth accepting!  Recall from above that ideas are to be nutured by the PhD process _and the research community_.
+
+#### 3 Types of Papers
+
+Since the ultimate goal is to identify papers that could maximize $E[impact\|p]$, let's look at how that affects different types of papers.  I'll base this on topics I am aquainted with:
+
+
+Improving a well established problem:
+
+{:.example}
+Consider a paper $p$ that proposes a system design for a super fast key-value system.  The value of a faster system is well established, meaning there is an agreed upon set of outcomes $\mathbb{O}_{kvstore}$ such that $$\mathbb{O}_p \approx \mathbb{O}_{kvstore}$$.  It is also clear the types of evidence (xacts per second, concurrency, etc)  needed to illustrate the paper's claims, meaning $P(p \| evid,assum)$ is more or less fixed.   Thus the main items to scrutinize are the techniques to establish evidence $P(evid\|you)$, the system assumptions $P(assum)$, and whether not the techniques could lead to better designs in other systems
+($$\mathbb{O}_{kvstore}\subset \mathbb{O}_{p}$$).
+Since most terms are fixed, it naturally leads to emphasis on system design, assumptions, and evaluation.
+
+A call to arms for what is possible (the Vision paper).  Popular titles include "The Case for yyyy":
+
+{:.example}
+The _potential_ of very high $$\sum_{o\in\mathbb{O}_p} o\times P(o\|p)$$ was such that weird assumptions (low $P(assum)$), and less-than-rigorous evidence ($P(p\|evid,assum)$) could be overlooked.  The evidence that _was_ collected should still be correct ($P(evid\|you)\approx 1$)
+
+The "Perfect" paper scores high on every term in our model.  These tend to win "test of time" awards, because most people can't predict how $\mathbb{O}_p$ will actually play out.
+
+{:.example}
+Provenance is the idea of tracking the input records/objects that contributed to a result.  There were many definitions of what "contribute" means, and different ways of modeling provenance.  The [Provenance Semirings](#) paper introduced the notion of representing the provenance of an output record $y$ as semiring polynomials over input records. Basically, $y=x_1 + 2x_2$ means that $x_1$ and two copies of $x_2$ were used to derive the output $y$.   They showed correctness for an important subset of SQL, and showed existing notions of "contribution" were special cases.  It also presented a universe of mathematical tools to think about provenance, and immediately impacted any application that relies on provenance (e.g., auditing, derivation tracking, incremental view deletion).  
+<br/>
+Since the paper proved correctness, $P(evid\|you)P(p\|evid,assum) = 1$.  The assumptions were simply that you cared about provenance.   There was already a set of important applications for which $P(o\|p)=1$, at the time it felt like $$\mathbb{O}_p$$ could be very large, and $$\mathbb{O}_p$$ grows over time as we discover new connections.  _In effect, every term in our model was high_  
+
+
+
+
+#### Least Publishable Units
+
+There is a subclass of paper widely considered as [Least publishable units](#) (LPUs).  These are technically correct, technically correct, but not really meaningful.  You can verify if any combination of the following hold:
+
+* $P(assum) \approx 0$ meaning the problem is made up.
+* $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$  meaning it doesn't have a lot of positive outcomes.
+* $P(evid)\approx 1$  meaning the evidence is blindingly obvious.
+
+{:.example}
+My first "solo" author paper arguably has elements of an LPU.  [Shinobi](#) was a database data-layout optimization tool.  The idea is that indexes are useful for reading small amounts of data, but can slow down insert operations since the indexes need to be updated.  Instead, it would partition the data in the table and dynamically add indexes for read-heavy partitions, and drop indexes if partitions became insert heavy.  However, it only worked for geo-spatial data (e.g., checkins, car locations) and if access patterns were very predictable.  Even though it beat baselines, it was kind of slow in absolute terms.  In otherwords, $P(assum)$ was low, the improvements were not ground breaking ($$\sum_{o\in\mathbb{O}_p} o$$ was low), and the results were not entirely surprising ($P(evid)$ was high).
+<br/><br/>
+HOWEVER!  It was still important to write as a training exercise for problem selection and developing skills so that $P(evid\|me)\approx 1$ in the future.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## General Comments
 
-In this section, we interpret many aspects of research in terms of maximizing $E[Impact\|p]$.  We assume that you have a PhD certificate, meaning $P(evid\|you) \times P(p\|evid,assum) \approx 1$.
+In this section, we interpret many aspects of research in terms of maximizing $E[impact\|p]$.  We assume that you have a PhD certificate, meaning $P(evid\|you) \times P(p\|evid,assum) \approx 1$.
 
 ### Communication
 
@@ -123,7 +217,7 @@ There is a commonly held ideal to "let the work speak for itself", meaning that 
 
 Papers are a manifestation of an idea that can contribute to another researcher $r$'s research impact.  Let the outcome be the probability that $r$ adopts the paper's ideas in an impactful way, meaning that we want the following to be high:
 
-$$P(Impact | r) P(r\ understands\ p|r\ reads\ p) P(r\ reads\ p)$$
+$$P(impact | r) P(r\ understands\ p|r\ reads\ p) P(r\ reads\ p)$$
  
 We cannot really control the first term directly, but the other two terms are important:
 
@@ -142,12 +236,30 @@ $$P(r\ reads\ p) = P(aware\ of\ p) P(buys\ p's\ ideas)$$
 
 Viewing "marketing" through an optimization lens helps us think about two common types of sub-optimal strategies (since $P(buys\ p's\ ideas)\approx1$):  
 
-1. $P(aware\ of\ p)\gg P(Impact \| r)$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
-2. $P(aware\ of\ p)\ll P(Impact \| r)$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketing enough for people to know about it.   
+1. $P(aware\ of\ p)\gg P(impact \| r)$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
+2. $P(aware\ of\ p)\ll P(impact \| r)$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketing enough for people to know about it.   
 
 Both are suboptimal because it distracts from other impactful work (the first case), or deprives others from doing impactful work (the second case).  I consider the second case a bigger issue because it is more widespread and requires training.  
 
-Why are papers undermarketed?  My hypothesis is that $P(Impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
+Why are papers undermarketed?  My hypothesis is that $P(impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
+
+
+
+### Why Academia?
+
+Presumably, you are in a research program because you believe _doing research_ is the best way to maximize this probability:
+
+$$E[impact | you] = E[impact | your\ research] + E[impact | non\ research\ stuff]$$
+
+Clearly there is a strong assumption of the following, based on your subset of desired outcomes $\mathbb{O}_r$.
+
+$$E[impact | your\ research] \gg E[impact | non\ research\ stuff]$$
+
+
+For some people, it turns out this assumption is not true, and it is better to leave research and do _real work_. This is primarly because $E[impact \| non\ research\ stuff] \gg E[impact \| your\ research]$.  For instance, it can be joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  All of these are totally totally cool.
+
+Some may try to suggest that you're not "cut out" for research, implying that $P(evid \| you) \rightarrow 0$.  Hopefully at this point you would agree that it's a narrow (sic. stupid) measure.  Don't listen to them.
+
 
 
 ### Partial Information
@@ -160,29 +272,23 @@ The optimization for selecting what research to pursue is based on the researche
 
 Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to focusing only on $P(p \| you)$ or positive outcomes.  It's generally a good idea to make sure of the following, assuming $\mathbb{O}^{+}$ and $\mathbb{O}^{-}$ are good and bad outcomes:
 
-$$E[Impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}} o\times P(o|p) \right) \gg 0 $$
+$$E[impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}} o\times P(o|p) \right) \gg 0 $$
 
 
 Ignoring $\mathbb{O}_{-}$ often leads to a crisis of conscience.   This is not at all unique to researchers.  There are [many examples](https://www.youtube.com/watch?v=PMotykw0SIk).
+
+The following is one that's scary to me:
 
 {:.example}
 The recent research in [automatically generating lipsynced videos](https://www.youtube.com/watch?v=9Yq67CjDqvw) is arguably a technology that can have deeply negative consequences.  One reason is that it makes it so easy to generate realistic-seeming videos that it fundamentally sheds doubt on what evidence can be believed.  The amount of doctored videos can be generated at a higher rate than people can discern and verify them, and encourage people to simply give up and not trust any evidence.
 
 
-### Least Publishable Units
-
-Least publishable units (LPUs) are papers that are technically correct, and shows something new but not really meaningful.  These are papers for which any combination of the following hold:
-
-* $P(assum) \approx 0$ meaning the problem is made up.
-* $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$  meaning it doesn't have a lot of positive outcomes.
-* $P(evid)\approx 1$  meaning the evidence is blindingly obvious.
-
 
 ### Assistant Professorship
 
-Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) P(evid\|you) \approx 1$, meaning that you are able to execute on a research problem correctly.   In this vein,the assistant professorship selects for, and gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some community decided threshold $\tau$:
+Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) P(evid\|you) \approx 1$, meaning that you are able to execute on a research problem correctly.   In this vein,the assistant professorship selects for, and gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some threshold $\tau$ decided by your letter writers:
 
-$$\sum_{p \in \mathbb{P}} E[Impact | p] > \tau$$
+$$\sum_{p \in \mathbb{P}} E[impact | p] > \tau$$
 
 
 ### Following the Crowd
@@ -190,6 +296,7 @@ $$\sum_{p \in \mathbb{P}} E[Impact | p] > \tau$$
 Following the crowd means that $P(assum\| now) \approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve.  In otherwords,  $\mathbb{O}_{r'} \approx \mathbb{O}_r$ for two researchers $r$ and $r'$.  
 
 In this setting, one hopes that $P(evid \| you) \gg P(evid \| r')$ so that you can out-execute others.
+
 
 
 
@@ -203,7 +310,7 @@ $$P(p|you)$$
 
 ### Perfection is the enemy of progress
 
-It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[Impact\|p]$ will actually increase.
+It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[impact\|p]$ will actually increase.
 
 
 ### Hard problems vs Simple problems
@@ -211,23 +318,7 @@ It is often tempting to focus on building the perfect system, getting all possib
 
 Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor.  A hard problem is a paper where $P(evid\|r)\approx 0$ for nearly all researchers $r$.  Solving it somewhat implies that you can solve other hard problems.
 
-Hopefully by this point, it is obvious why problem hardness does not necessarily imply impact.  It ignores whether or not the problem even matters, $P(o\|p)$, and whether or not it is practical $P(assum)$.  This is why working on simple problems is totally fine, if it is carefully selected to maximize $E[Impact\|p]$.
-
-### Why Academia?
-
-Presumably, you are in a research program because you believe _doing research_ is the best way to maximize this probability:
-
-$$E[Impact | you] = E[Impact | your\ research] + E[Impact | non\ research\ stuff]$$
-
-Clearly there is a strong assumption of the following, based on your subset of desired outcomes $\mathbb{O}_r$.
-
-$$E[Impact | your\ research] \gg E[Impact | non\ research\ stuff]$$
-
-
-For some people, it turns out this assumption is not true, and it is better to leave research and do _real work_. This is primarly because $E[Impact \| non\ research\ stuff] \gg E[Impact \| your\ research]$.  For instance, it can be joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  All of these are totally totally cool.
-
-Some may try to suggest that you're not "cut out" for research, implying that $P(evid \| you) \rightarrow 0$.  Hopefully at this point you would agree that it's a narrow (sic. stupid) measure.  Don't listen to them.
-
+Hopefully by this point, it is obvious why problem hardness does not necessarily imply impact.  It ignores whether or not the problem even matters, $P(o\|p)$, and whether or not it is practical $P(assum)$.  This is why working on simple problems is totally fine, if it is carefully selected to maximize $E[impact\|p]$.
 
 
 ### Academia vs Industry
