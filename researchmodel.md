@@ -46,11 +46,13 @@ $$P(p) \approx P(p | evid, assum) P(evid | you) P(assum)$$
 
 To summarize, the impact of a paper is:
 
+<center>
 $$E[impact | p] = 
 \blue{P(p | evid, assum) P(evid | you)} 
 \red{P(assum)}
 \red{\sum_{o \in \mathbb{O}_p} o\times P(o | p)}
 $$
+</center>
 
 
 
@@ -76,13 +78,16 @@ $$\begin{align}
 \end{align}$$
 
 
-Thus, the optimization problem is simple.  <small>(Note that the input is $\mathbb{O}_r$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$)</small>
+Thus, the optimization problem is simple. 
 
-<center style="font-size: 15pt">
-Given $\mathbb{O}_r$, pick the best paper $p^*$ that maximizes $E[impact|p^*]$.    
+<center style="font-size: 15pt; font-family: courier; margin-bottom: 1em;">
+Given $\mathbb{O}_r$, pick the best paper $p^*$ that maximizes $E[impact|p^*]$   
+<br/>
+s.t. $\nexists p'\ E[impact|p'] \gg E[impact|p^*]$
 </center>
 
 
+The _Novelty_ constraint says that $p^*$ is better than any alternative $p'$ in related work.  Also, note that the input is $\mathbb{O}_r$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$)
 
 
 # Takeaways
@@ -101,8 +106,6 @@ $$\begin{align}
 \blue{P(p | evid)} &\approx 1
 \end{align}$$
 
-Usually, it also certifies that you can pick _some_ paper $p$ to write and argue that it is a good idea.  This means that you can articulate $\mathbb{O}_p$
-
 An important purpose of taking courses, coding, doing internships, mentorship, reading papers, getting criticism is improving these terms.
 
 
@@ -113,14 +116,13 @@ Assuming you're "certified", researchers primarily differ based on the red part 
 
 Ideas: identifying great outcomes
 
-* Identifying an idea where the outcome is great ($o\gg 0$) and for which the research greatly contributes to ($P(o \| p) \gg P(o\|!p)$ is very very hard
-* The advisor and community should *nurture and encourage* coming up with good ideas because good ideas are not obvious and fragile.
-* Accept that _good_ can have many definitions.  Some argue that a liberal arts degree helps pick meaningful definitions of _good_. 
+* Identifying a great outcome ($o\gg 0$) as well as an approach $p$ that vastly improves on what is possible $P(o \| p) \gg P(o\|p')\ \forall p'$
+* Finding great outcomes is very hard.  The advisor and community should *nurture and encourage* this skill.
 
 Vision: can you anticipate the future?
 
 * $P(assum \| future) \gg P(assum \| now)$  means you can see that assumptions that currently do not hold will in the future.  For instance, foreseeing technology trends.
-* Ability to estimate a large subset of outcomes $\mathbb{O}_{you} \subset \mathbb{O}$ 
+* Ability to estimate a large subset of outcomes $\mathbb{O}_{r} \subset \mathbb{O}$ 
 
 
 <div style="margin-top: 2em; text-align:center; font-weight: bold; font-size: 15pt;">
@@ -128,13 +130,17 @@ Takeaway: Excellent PhD programs/advisors nurture ideas and vision.
 </div>
 
 
-#### Applying for a PhD
+### Applying for a PhD <a name="applying"></a>
 
 It is clear that one hopes to admit graduate students that have the capacity to work on research that have high $E[impact\|p]$.  Faculty reviewers naturally seek to estimate each of the model terms from the application and interviews.   
 
-The quantifiable ones that are easier to measure are also what the PhD certifies: $P(o\|evid,assum)P(evid\|you)$.  If you have done past research or complex projects, they can be used to demonstrate _technical competence_.  This simply means it is more likely that you can learn and complete projects of interest.    This doesn't mean you need to know everything - that's the purpose of taking relevant classes, working on starter research projects, and interning.    If you assume that faculty are risk adverse, they will look for students with enough samples to better estimate $P(o\|evid,assum)P(evid\|you)$.
+The quantifiable ones that are easier to measure are also what the PhD certifies: $\blue{P(p\|evid,assum)P(evid\|you)}$.  If you have done past research or complex projects, they can be used to demonstrate _technical competence_.  This simply means it is more likely that you can learn and complete projects of interest.    This doesn't mean you need to know everything - that's the purpose of taking relevant classes, working on starter research projects, and interning.    If you assume that faculty are risk adverse, they will look for students with more samples, or samples that have high certainty described in recommendation letters.
 
-The intangible components are related to ideas and vision.  This is part of the value of the essay.    It is harder to illustrate this unless you have led projects in the past.  If this is the case, describe the positive outcomes enabled by your work!   Show that you have vision by remarking about assumptions that may change in the future ($P(assum\|future)\gg P(assum\|now)$), outcomes that people are not thinking about ($\mathbb{O}_{you}$), or techniques that people are not thinking of that would dramatically boost the ability to gather evidence for important problems $P(evid\|researchers)$.
+The intangible components are related to ideas and vision.  This is part of the value of the essay.    It is harder to illustrate this unless you have led projects in the past.  If this is the case, describe the positive outcomes enabled by your work!   Show that you have vision by remarking about ways that could maximize $E[\circ]$. These could be, but are not limited to:
+
+* Assumptions that may change in the future ($P(assum\|future)\gg P(assum\|now)$)
+* Outcomes that people are not thinking about ($\mathbb{O}_{r}$)
+* Techniques that people are not thinking of that would dramatically boost the ability of other researchers to gather evidence $P(evid\|researchers)$.
 
 
 
@@ -149,7 +155,7 @@ The hard part is evaluating that the paper's ideas _could_ have desirable outcom
 
 $$\red{\sum_{o\in\mathbb{O}_p} o\times P(o | p)} > \tau$$
 
-The threshold $\tau$ is ill defined, but generally "higher-tier" venues have a higher threshold than lower tier venues.  Since it is ill-defined, a common reason to reject a paper is that the paper lacks "originality" or the "contribution is too small".  This can be because the outcomes $\mathbb{O}_p$ are not clearly spelled out, or the connection between the paper's ideas and the outcomes are unclear $P(o\|p) = ?$
+The threshold $\tau$ is ill defined, but generally "higher-tier" venues have a higher threshold than lower tier venues.  Since it is ill-defined, a common reason to reject a paper is that the paper lacks "originality" or the "contribution is too small".  This can be because the outcomes $\mathbb{O}_p$ are not clearly spelled out, or the connection between the paper's ideas and the outcomes are unclear ($P(o\|p) = ?$)
 
 This is where it's important to stop yourself from viewing the submission from an adversarial perspective!  If you could imagine positive outcomes that fall out from the paper, _even if the authors missed them_, then the paper could be worth accepting!  Recall from above that ideas are to be nutured by the PhD process _and the research community_.
 
@@ -173,7 +179,7 @@ The _potential_ of very high $$\sum_{o\in\mathbb{O}_p} o\times P(o\|p)$$ was suc
 The "Perfect" paper scores high on every term in our model.  These tend to win "test of time" awards, because most people can't predict how $\mathbb{O}_p$ will actually play out.
 
 {:.example}
-Provenance is the idea of tracking the input records/objects that contributed to a result.  There were many definitions of what "contribute" means, and different ways of modeling provenance.  The [Provenance Semirings](#) paper introduced the notion of representing the provenance of an output record $y$ as semiring polynomials over input records. Basically, $y=x_1 + 2x_2$ means that $x_1$ and two copies of $x_2$ were used to derive the output $y$.   They showed correctness for an important subset of SQL, and showed existing notions of "contribution" were special cases.  It also presented a universe of mathematical tools to think about provenance, and immediately impacted any application that relies on provenance (e.g., auditing, derivation tracking, incremental view deletion).  
+Provenance is the idea of tracking the input records/objects that contributed to a result.  There were many definitions of what "contribute" means, and different ways of modeling provenance.  The [Provenance Semirings](https://www.google.com/search?q=provenance+semirings) paper introduced the notion of representing the provenance of an output record $y$ as semiring polynomials over input records. Basically, $y=x_1 + 2x_2$ means that $x_1$ and two copies of $x_2$ were used to derive the output $y$.   They showed correctness for an important subset of SQL, and showed existing notions of "contribution" were special cases.  It also presented a universe of mathematical tools to think about provenance, and immediately impacted any application that relies on provenance (e.g., auditing, derivation tracking, incremental view deletion).  
 <br/>
 Since the paper proved correctness, $P(evid\|you)P(p\|evid,assum) = 1$.  The assumptions were simply that you cared about provenance.   There was already a set of important applications for which $P(o\|p)=1$, at the time it felt like $$\mathbb{O}_p$$ could be very large, and $$\mathbb{O}_p$$ grows over time as we discover new connections.  _In effect, every term in our model was high_  
 
@@ -189,9 +195,9 @@ There is a subclass of paper widely considered as [Least publishable units](#) (
 * $P(evid)\approx 1$  meaning the evidence is blindingly obvious.
 
 {:.example}
-My first "solo" author paper arguably has elements of an LPU.  [Shinobi](#) was a database data-layout optimization tool.  The idea is that indexes are useful for reading small amounts of data, but can slow down insert operations since the indexes need to be updated.  Instead, it would partition the data in the table and dynamically add indexes for read-heavy partitions, and drop indexes if partitions became insert heavy.  However, it only worked for geo-spatial data (e.g., checkins, car locations) and if access patterns were very predictable.  Even though it beat baselines, it was kind of slow in absolute terms.  In otherwords, $P(assum)$ was low, the improvements were not ground breaking ($$\sum_{o\in\mathbb{O}_p} o$$ was low), and the results were not entirely surprising ($P(evid)$ was high).
+My first "solo" author paper arguably has elements of an LPU.  [Shinobi](http://sirrice.github.io/files/papers/shinobi-icde11.pdf) was a database data-layout optimization tool.  The idea is that indexes are useful for reading small amounts of data, but can slow down insert operations since the indexes need to be updated.  Instead, it would partition the data in the table and dynamically add indexes for read-heavy partitions, and drop indexes if partitions became insert heavy.  However, it only worked for geo-spatial data (e.g., checkins, car locations) and if access patterns were very predictable.  Even though it beat baselines, it was kind of slow in absolute terms.  In otherwords, $P(assum)$ was low, the improvements were not ground breaking ($$\sum_{o\in\mathbb{O}_p} o$$ was low), and the results were not entirely surprising ($P(evid)$ was high).
 <br/><br/>
-HOWEVER!  It was still important to write as a training exercise for problem selection and developing skills so that $P(evid\|me)\approx 1$ in the future.
+HOWEVER! It was important to write the paper as a training exercise for problem selection and developing skills so that $P(evid\|me)\approx 1$ in the future.
 
 
 
@@ -262,22 +268,16 @@ Some may try to suggest that you're not "cut out" for research, implying that $P
 
 
 
-### Partial Information
-
-Clearly, we don't have access to all possible outcomes $\mathbb{O}$.  Instead, each researcher $r$ imagines a small subset $\mathbb{O}_r \subseteq \mathbb{O} $ of possible outcomes.  Hopefully, the imagined outcomes are positive: 
-$$\sum_{o \in \mathbb{O}_r} o \gg 0$$
-The optimization for selecting what research to pursue is based on the researcher's $\mathbb{O}_r$, which is colored by experiences, education, etc, and contributes to what people call "vision".
-
 ### Unintended Outcomes
 
-Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to focusing only on $P(p \| you)$ or positive outcomes.  It's generally a good idea to make sure of the following, assuming $\mathbb{O}^{+}$ and $\mathbb{O}^{-}$ are good and bad outcomes:
+Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to focusing only on $P(p \| you)$ or only positive outcomes.  Let $\mathbb{O}^{+}_p$ and $\mathbb{O}^{-}_p$ are good and bad outcomes of the paper.  We want to make sure that:
 
-$$E[impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}} o\times P(o|p) \right) \gg 0 $$
+$$E[impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}_p} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}_p} o\times P(o|p) \right) \gg 0 $$
 
 
-Ignoring $\mathbb{O}_{-}$ often leads to a crisis of conscience.   This is not at all unique to researchers.  There are [many examples](https://www.youtube.com/watch?v=PMotykw0SIk).
+Ignoring $\mathbb{O}^{-}_p$ can lead to a crisis of conscience when the negative outcomes become widespread.    This is not unique to researchers.  Recently, [facebook execs expressed their regret in eroding democracy](https://www.youtube.com/watch?v=PMotykw0SIk), while articles about silicon valley [make similar statements](https://www.buzzfeed.com/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway?utm_term=.rmkMVmpNK#.mqWWv7ald).
 
-The following is one that's scary to me:
+The following is one that's personally scary to me:
 
 {:.example}
 The recent research in [automatically generating lipsynced videos](https://www.youtube.com/watch?v=9Yq67CjDqvw) is arguably a technology that can have deeply negative consequences.  One reason is that it makes it so easy to generate realistic-seeming videos that it fundamentally sheds doubt on what evidence can be believed.  The amount of doctored videos can be generated at a higher rate than people can discern and verify them, and encourage people to simply give up and not trust any evidence.
@@ -286,18 +286,23 @@ The recent research in [automatically generating lipsynced videos](https://www.y
 
 ### Assistant Professorship
 
-Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) P(evid\|you) \approx 1$, meaning that you are able to execute on a research problem correctly.   In this vein,the assistant professorship selects for, and gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some threshold $\tau$ decided by your letter writers:
+Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) P(evid\|you) \approx 1$, meaning that you are able to execute on a research problem correctly, and can hopefully mentor others to do the same.   Using the model, a narrow way to view the assistant professorship is a selection process that gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some threshold $\tau$ decided by your letter writers:
 
 $$\sum_{p \in \mathbb{P}} E[impact | p] > \tau$$
 
 
 ### Following the Crowd
 
-Following the crowd means that $P(assum\| now) \approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve.  In otherwords,  $\mathbb{O}_{r'} \approx \mathbb{O}_r$ for two researchers $r$ and $r'$.  
+Following the crowd means that $P(assum\| now) \approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve.  In other words,  $\mathbb{O}_{r'} \approx \mathbb{O}_r$ for two researchers $r$ and $r'$.  
 
 In this setting, one hopes that $P(evid \| you) \gg P(evid \| r')$ so that you can out-execute others.
 
 
+### Hammers Without Nails
+
+It is easy to develop systems or techniques by focusing on getting $P(p\|evid,assum)P(evid\|you) \approx 1$ (the Hammer).  This assumes that the hammer is indeed useful ($\mathbb{O}_p \ne \emptyset$).  However, since you're on the hook looking for positive outcomes (the Nails), it runs the risk of coming up empty handed:
+
+$$\mathbb{O}_r \cap \mathbb{O}_p \approx \emptyset$$
 
 
 <!--
@@ -312,6 +317,7 @@ $$P(p|you)$$
 
 It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[impact\|p]$ will actually increase.
 
+Learn more on the [wikipedia page](https://en.m.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
 
 ### Hard problems vs Simple problems
 
