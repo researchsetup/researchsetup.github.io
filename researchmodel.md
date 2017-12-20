@@ -3,6 +3,33 @@ layout: post
 tagline:
 ---
 
+# Index
+
+[The Model](#themodel)
+
+* [Research as Optimization](#researchopt)
+
+PhD Takeaways
+
+* [PhD as Certification](#phdcert)
+* [Applying for PhD](#applying)
+* [Reviewing and Reading Papers](#reviewing)
+  * [3 Types of Papers](#threepapers)
+  * [Least Publishable Units](#lpu)
+
+General Takeaways
+
+* [Communication](#communication)
+  * [Marketing](#marketing)
+* [Why Research?](#whyresearch)
+* [Unintended Outcomes](#badoutcomes)
+* [The Assistant Professorship](#assprof)
+* [Following the Crowd](#thecrowd)
+* [Hammers w/out Nails](#hammer)
+* [Perfection is the Enemy of Progress](#perfection)
+* [Hard Problems vs Simple Problems](#hardprobs)
+* [Academia vs Industry](#industry)
+
 
 $$\definecolor{blue}{RGB}{18,110,213}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -68,7 +95,7 @@ $\red{P(assum)}$ defines the scope of the applicability.  Understanding the mark
 
 $\red{o\times P(o \| p)}$ defines the belief about whether or not the outcome $\red{o}$ is meaningful and how much the paper will increase its likelihood $\red{P(o \| p)}$.   
 
-### Research as Optimization
+### <a name="researchopt"></a>Research as Optimization 
 
 Of course, you  only have a limited view of the possible outcomes of your own work!  In otherwords, $\mathbb{O}_{you} \subset \mathbb{O}$.  It is very likely that you cannot imagine all but a small number of the possible outcomes:
 
@@ -97,7 +124,7 @@ There are many takeaways that we can make based studying the above optimization 
 ## PhD Takeaways
 
 
-#### PhD as Certification
+#### <a name="phdcert"></a>PhD as Certification 
 
 The PhD is not magical.  You should think of it as certifying that you have _sufficient_ knowledge to conduct research. In other words, given a $p$ and $assum$, you can ensure that:
 
@@ -130,7 +157,7 @@ Takeaway: Excellent PhD programs/advisors nurture ideas and vision.
 </div>
 
 
-### Applying for a PhD <a name="applying"></a>
+### <a name="applying"></a>Applying for a PhD 
 
 It is clear that one hopes to admit graduate students that have the capacity to work on research that have high $E[impact\|p]$.  Faculty reviewers naturally seek to estimate each of the model terms from the application and interviews.   
 
@@ -144,7 +171,7 @@ The intangible components are related to ideas and vision.  This is part of the 
 
 
 
-### Reviewing and Reading Papers
+### <a name="reviewing"></a>Reviewing and Reading Papers 
 
 You will read and present many papers throughout your PhD.  Eventually you will have the opportunity to review papers.  The two activites overlap a lot, so I'll mainly describe this subsection in terms of paper reviewing.
 
@@ -159,7 +186,7 @@ The threshold $\tau$ is ill defined, but generally "higher-tier" venues have a h
 
 This is where it's important to stop yourself from viewing the submission from an adversarial perspective!  If you could imagine positive outcomes that fall out from the paper, _even if the authors missed them_, then the paper could be worth accepting!  Recall from above that ideas are to be nutured by the PhD process _and the research community_.
 
-#### 3 Types of Papers
+#### <a name="threepapers"></a>3 Types of Papers 
 
 Since the ultimate goal is to identify papers that could maximize $E[impact\|p]$, let's look at how that affects different types of papers.  I'll base this on topics I am aquainted with:
 
@@ -186,7 +213,7 @@ Since the paper proved correctness, $P(evid\|you)P(p\|evid,assum) = 1$.  The ass
 
 
 
-#### Least Publishable Units
+#### <a name="lpu"></a>Least Publishable Units 
 
 There is a subclass of paper widely considered as [Least publishable units](#) (LPUs).  These are technically correct, technically correct, but not really meaningful.  You can verify if any combination of the following hold:
 
@@ -213,11 +240,11 @@ HOWEVER! It was important to write the paper as a training exercise for problem 
 
 
 
-## General Comments
+## General Comments 
 
 In this section, we interpret many aspects of research in terms of maximizing $E[impact\|p]$.  We assume that you have a PhD certificate, meaning $P(evid\|you) \times P(p\|evid,assum) \approx 1$.
 
-### Communication
+### <a name="communication"></a>Communication 
 
 There is a commonly held ideal to "let the work speak for itself", meaning that good work will be recognized and appreciated.  It implicitly discourages communication if the measure of impact is fame.    But what if we care about impact in terms of changing society, policy, lives, or even other researchers' habits and tools.  Consider an outcome $o$ for paper $p$, then $P(o\|p)$ ignores important latent variables!  Let's consider one instance.
 
@@ -231,7 +258,7 @@ We cannot really control the first term directly, but the other two terms are im
 2. $P(r\ understands\ p)$.    $r$ has been convinced to read your paper!  Will it be easy for her to figure out what your paper is saying?  This is about writing clearly, thoroughly, and unambiguously, so that $r$ can take your ideas and techniques and actually use them.  This is also why examples are important to illustrate applications of your techniques/ideas.
 
 
-#### Marketing
+#### <a name="marketing"></a>Marketing 
 
 Let's look into $P(r\ reads\ p)$ a bit, since marketing can be a slightly sensitive issue.  We can break it into two terms:
 
@@ -251,7 +278,7 @@ Why are papers undermarketed?  My hypothesis is that $P(impact\| p)$ is difficul
 
 
 
-### Why Academia?
+### <a name="whyresearch"></a>Why Research? 
 
 Presumably, you are in a research program because you believe _doing research_ is the best way to maximize this probability:
 
@@ -268,7 +295,7 @@ Some may try to suggest that you're not "cut out" for research, implying that $P
 
 
 
-### Unintended Outcomes
+### <a name="badoutcomes"></a>Unintended Outcomes 
 
 Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to focusing only on $P(p \| you)$ or only positive outcomes.  Let $\mathbb{O}^{+}_p$ and $\mathbb{O}^{-}_p$ are good and bad outcomes of the paper.  We want to make sure that:
 
@@ -284,21 +311,21 @@ The recent research in [automatically generating lipsynced videos](https://www.y
 
 
 
-### Assistant Professorship
+### <a name="assprof"></a>The Assistant Professorship 
 
 Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) P(evid\|you) \approx 1$, meaning that you are able to execute on a research problem correctly, and can hopefully mentor others to do the same.   Using the model, a narrow way to view the assistant professorship is a selection process that gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some threshold $\tau$ decided by your letter writers:
 
 $$\sum_{p \in \mathbb{P}} E[impact | p] > \tau$$
 
 
-### Following the Crowd
+### <a name="thecrowd"></a>Following the Crowd 
 
 Following the crowd means that $P(assum\| now) \approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve.  In other words,  $\mathbb{O}_{r'} \approx \mathbb{O}_r$ for two researchers $r$ and $r'$.  
 
 In this setting, one hopes that $P(evid \| you) \gg P(evid \| r')$ so that you can out-execute others.
 
 
-### Hammers Without Nails
+### <a name="hammer"></a>Hammers Without Nails 
 
 It is easy to develop systems or techniques by focusing on getting $P(p\|evid,assum)P(evid\|you) \approx 1$ (the Hammer).  This assumes that the hammer is indeed useful ($\mathbb{O}_p \ne \emptyset$).  However, since you're on the hook looking for positive outcomes (the Nails), it runs the risk of coming up empty handed:
 
@@ -313,13 +340,13 @@ $$\mathbb{O}_r \cap \mathbb{O}_p \approx \emptyset$$
 $$P(p|you)$$
 -->
 
-### Perfection is the enemy of progress
+### <a name="perfection"></a>Perfection is the Enemy of Progress 
 
 It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[impact\|p]$ will actually increase.
 
 Learn more on the [wikipedia page](https://en.m.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
 
-### Hard problems vs Simple problems
+### <a name="hardprobs"></a>Hard Problems vs Simple Problems 
 
 
 Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor, and shows that you're [smart](https://www.youtube.com/watch?v=tcGQpjCztgA).  A hard problem is a paper where $P(evid\|r)\approx 0$ for nearly all researchers $r$.  Solving it supposedly implies that you can solve other hard problems.
@@ -327,53 +354,10 @@ Grad students often worry about not working on "hard problems" because solving h
 Hopefully by this point, it is obvious why problem hardness does not necessarily imply impact (unless the desired outcome is to appear smart).  It ignores whether or not the problem even matters for good outcomes, $P(o\|p)$, whether or not it is practical $P(assum)$, and how many good outcomes it affects $\|\mathbb{O}_p\|$.  This is why working on simple problems is totally fine, if it is carefully selected to maximize $E[impact\|p]$.
 
 
-### Academia vs Industry
+### <a name="industry"></a>Academia vs Industry 
 
 Finally, a comment about doing research in academia vs industry.  Arguably, industry has way more resources than academics, so academics should be selective about the class of papers $p$ to work on.  In other words, we can assume that for the most part, $P(evid\|industry)\gg P(evid\|you)$, however industry has pressure to show short-term results.  Thus, the ideal class of problems are ones where $P(assum \| now) \approx 0$ and $P(assum\|future) \approx 1$.  Here's a made up diagram:
 
 <img src="./files/images/researchmodel.png" width="300px"/>
 
 
-<!--
-
-## Appendix
-
-This section sets up the context of the model.  The good stuff [was in The Model](#themodel)
-
-Let us start by agreeing that the broad goal is to maximize the probability of some goodness measure in the world.  
-
-        P(good)
-
-This could be really anything and is a personal decision.  It could be:
-
-
-        P(love)   
-        P(not world hunger)   
-        P(health)   
-        P(wealth)
-
-This is too general, so let us decompose it into elements under your control and in the context of research.  First, the focus is on `you`:
-
-        P(good | you)
-
-For the purposes here, you have chosen research, so let us assume `P(nonresearch | you) -> 0`:
-
-        P(good | you) = P(good | research) P(research | you)
-
-Let us take _the paper_ as proxy for a unit of research.  That is clearly a vast oversimplification, but let us go with that for now — you are a paper generator.  You could generate *sound* papers, or *unsound and incorrect* papers.
-
-        P(good | you) = P(good | paper) P(paper | you) = 
-                        P(good | sound) P(sound | you) + P(good | unsound) P(unsound | you)
-
-We generally assume that sound technical work is better.  In other words, that 
-
-       P(good | unsound) -> 0.  
-
-This is pretty reasonable, however one might say that `P(fame | unsound)` is a different story, because `P(unsound | you)` is arguably easier.  We also hope that in the long term, aspects such as shame get in the way of fame.  To simplify our life, let us strive for sound work:
-
-       paper = sound paper
-
-We are now set up to get to business and analyze the positive impact of publishing sound research.  
-
-
--->
