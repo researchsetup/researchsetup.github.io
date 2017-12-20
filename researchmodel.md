@@ -215,7 +215,7 @@ Since the paper proved correctness, $P(evid\|you)P(p\|evid,assum) = 1$.  The ass
 
 #### <a name="lpu"></a>Least Publishable Units 
 
-There is a subclass of paper widely considered as [Least publishable units](#) (LPUs).  These are technically correct, technically correct, but not really meaningful.  You can verify if any combination of the following hold:
+There is a subclass of paper widely considered as [Least Publishable](./files/lpu.pdf) [Units](https://en.m.wikipedia.org/wiki/Least_publishable_unit)  (LPUs).  These are technically correct, technically correct, but not really meaningful.  You can verify if any combination of the following hold:
 
 * $\red{P(assum)} \approx 0$ meaning the problem is made up.
 * $\red{P(o \| p)} \le 0$ for $o\in \mathbb{O}_p$  meaning it doesn't have a lot of positive outcomes.
