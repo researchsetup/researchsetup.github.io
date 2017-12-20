@@ -143,13 +143,13 @@ Assuming you're "certified", researchers primarily differ based on the red part 
 
 Ideas: identifying great outcomes
 
-* Identifying a great outcome ($o\gg 0$) as well as an approach $p$ that vastly improves on what is possible $P(o \| p) \gg P(o\|p')\ \forall p'$
+* Identifying a great outcome ($o\gg 0$) as well as an approach $p$ that vastly improves on what is possible $\red{P(o \| p) \gg P(o\|p')\ \forall p'}$
 * Finding great outcomes is very hard.  The advisor and community should *nurture and encourage* this skill.
 
 Vision: can you anticipate the future?
 
-* $P(assum \| future) \gg P(assum \| now)$  means you can see that assumptions that currently do not hold will in the future.  For instance, foreseeing technology trends.
-* Ability to estimate a large subset of outcomes $\mathbb{O}_{r} \subset \mathbb{O}$ 
+* $\red{P(assum \| future) \gg P(assum \| now)}$  means you can see that assumptions that currently do not hold will in the future.  For instance, foreseeing technology trends.
+* Ability to estimate a large subset of outcomes $\red{\mathbb{O}_{r} \subset \mathbb{O}}$ 
 
 
 <div style="margin-top: 2em; text-align:center; font-weight: bold; font-size: 15pt;">
@@ -191,19 +191,19 @@ This is where it's important to stop yourself from viewing the submission from a
 Since the ultimate goal is to identify papers that could maximize $E[impact\|p]$, let's look at how that affects different types of papers.  I'll base this on topics I am aquainted with:
 
 
-Improving a well established problem:
+<strong>Improving a well established problem</strong>, and why the experimental bar is higher:
 
 {:.example}
 Consider a paper $p$ that proposes a system design for a super fast key-value system.  The value of a faster system is well established, meaning there is an agreed upon set of outcomes $\mathbb{O}_{kvstore}$ such that $$\mathbb{O}_p \approx \mathbb{O}_{kvstore}$$.  It is also clear the types of evidence (xacts per second, concurrency, etc)  needed to illustrate the paper's claims, meaning $P(p \| evid,assum)$ is more or less fixed.   Thus the main items to scrutinize are the techniques to establish evidence $P(evid\|you)$, the system assumptions $P(assum)$, and whether not the techniques could lead to better designs in other systems
 ($$\mathbb{O}_{kvstore}\subset \mathbb{O}_{p}$$).
 Since most terms are fixed, it naturally leads to emphasis on system design, assumptions, and evaluation.
 
-A call to arms for what is possible (the Vision paper).  Popular titles include "The Case for yyyy":
+<strong>The Vision(ary) paper</strong> highlights a set of outcomes so different from the rest of the research community that it's worth getting the word out because there's potential to increase $E[impact]$ of the whole community. 
 
 {:.example}
-The _potential_ of very high $$\sum_{o\in\mathbb{O}_p} o\times P(o\|p)$$ was such that weird assumptions (low $P(assum)$), and less-than-rigorous evidence ($P(p\|evid,assum)$) could be overlooked.  The evidence that _was_ collected should still be correct ($P(evid\|you)\approx 1$)
+By 2011, Mechanical Turk (MTurk) had been around for about 6 years, often for labeling and data cleaning/collection tasks, and was getting attention from HCI communities.  [Adam Marcus](http://www.marcua.net) suggested that MTurk was at a price point where workers could be though of as databases themselves.  Despite lots of work on thinking of sensors, the web, remote machines, files as databases, thinking through the implications of fleshy, human databases was pretty exciting and we wrote a ["vision paper"](http://sirrice.github.io/files/papers/qurk-cidr11.pdf) around the idea.   It sketched an architecture and slapped together a language ($P(evid\|r)$ was mediocre), made hand-wavy assumptions (low $P(assum)$), and focused on the potential of great outcomes (high $\mathbb{O}_p$).
 
-The "Perfect" paper scores high on every term in our model.  These tend to win "test of time" awards, because most people can't predict how $\mathbb{O}_p$ will actually play out.
+<strong>The "Perfect" paper</strong> scores high on every term in our model.  These tend to win "test of time" awards later on, because most people can't predict how $\mathbb{O}_p$ will actually play out.
 
 {:.example}
 Provenance is the idea of tracking the input records/objects that contributed to a result.  There were many definitions of what "contribute" means, and different ways of modeling provenance.  The [Provenance Semirings](https://www.google.com/search?q=provenance+semirings) paper introduced the notion of representing the provenance of an output record $y$ as semiring polynomials over input records. Basically, $y=x_1 + 2x_2$ means that $x_1$ and two copies of $x_2$ were used to derive the output $y$.   They showed correctness for an important subset of SQL, and showed existing notions of "contribution" were special cases.  It also presented a universe of mathematical tools to think about provenance, and immediately impacted any application that relies on provenance (e.g., auditing, derivation tracking, incremental view deletion).  
@@ -217,9 +217,9 @@ Since the paper proved correctness, $P(evid\|you)P(p\|evid,assum) = 1$.  The ass
 
 There is a subclass of paper widely considered as [Least publishable units](#) (LPUs).  These are technically correct, technically correct, but not really meaningful.  You can verify if any combination of the following hold:
 
-* $P(assum) \approx 0$ meaning the problem is made up.
-* $P(o \| p) \le 0$ for $o\in \mathbb{O}_r$  meaning it doesn't have a lot of positive outcomes.
-* $P(evid)\approx 1$  meaning the evidence is blindingly obvious.
+* $\red{P(assum)} \approx 0$ meaning the problem is made up.
+* $\red{P(o \| p)} \le 0$ for $o\in \mathbb{O}_p$  meaning it doesn't have a lot of positive outcomes.
+* $\blue{P(evid)}\approx 1$  meaning the evidence is blindingly obvious.
 
 {:.example}
 My first "solo" author paper arguably has elements of an LPU.  [Shinobi](http://sirrice.github.io/files/papers/shinobi-icde11.pdf) was a database data-layout optimization tool.  The idea is that indexes are useful for reading small amounts of data, but can slow down insert operations since the indexes need to be updated.  Instead, it would partition the data in the table and dynamically add indexes for read-heavy partitions, and drop indexes if partitions became insert heavy.  However, it only worked for geo-spatial data (e.g., checkins, car locations) and if access patterns were very predictable.  Even though it beat baselines, it was kind of slow in absolute terms.  In otherwords, $P(assum)$ was low, the improvements were not ground breaking ($$\sum_{o\in\mathbb{O}_p} o$$ was low), and the results were not entirely surprising ($P(evid)$ was high).
@@ -242,7 +242,7 @@ HOWEVER! It was important to write the paper as a training exercise for problem 
 
 ## General Comments 
 
-In this section, we interpret many aspects of research in terms of maximizing $E[impact\|p]$.  We assume that you have a PhD certificate, meaning $P(evid\|you) \times P(p\|evid,assum) \approx 1$.
+In this section, we interpret many aspects of research in terms of maximizing $E[impact\|p]$.  We assume that you have a PhD certificate, meaning $\blue{P(evid\|you) \times P(p\|evid,assum)} \approx 1$.
 
 ### <a name="communication"></a>Communication 
 
