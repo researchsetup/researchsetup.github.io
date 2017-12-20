@@ -20,19 +20,15 @@ h1 {
   line-height: 30pt;
   margin-top: 2em;
 }
-h1 #logo {
-  float:left; font-size: 50pt;
-}
-h1 #tagline {
-  margin-top: -3pt;
-  float:left; font-size: 17pt; line-height: 19pt; padding-left: 1em; color: #aaa;
-}
 h2 {
   margin-top: 2em;
   font-family: "Raleway";
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+h3 {
+  margin-top: 2em;
 }
 h4 {
   margin-top: 2em;
