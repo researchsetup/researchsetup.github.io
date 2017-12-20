@@ -322,9 +322,9 @@ Learn more on the [wikipedia page](https://en.m.wikipedia.org/wiki/Perfect_is_th
 ### Hard problems vs Simple problems
 
 
-Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor.  A hard problem is a paper where $P(evid\|r)\approx 0$ for nearly all researchers $r$.  Solving it somewhat implies that you can solve other hard problems.
+Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor, and shows that you're [smart](https://www.youtube.com/watch?v=tcGQpjCztgA).  A hard problem is a paper where $P(evid\|r)\approx 0$ for nearly all researchers $r$.  Solving it supposedly implies that you can solve other hard problems.
 
-Hopefully by this point, it is obvious why problem hardness does not necessarily imply impact.  It ignores whether or not the problem even matters, $P(o\|p)$, and whether or not it is practical $P(assum)$.  This is why working on simple problems is totally fine, if it is carefully selected to maximize $E[impact\|p]$.
+Hopefully by this point, it is obvious why problem hardness does not necessarily imply impact (unless the desired outcome is to appear smart).  It ignores whether or not the problem even matters for good outcomes, $P(o\|p)$, whether or not it is practical $P(assum)$, and how many good outcomes it affects $|\mathbb{O}_p|$.  This is why working on simple problems is totally fine, if it is carefully selected to maximize $E[impact\|p]$.
 
 
 ### Academia vs Industry
