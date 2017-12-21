@@ -6,6 +6,7 @@
 | $\mathbb{O}_r$       | Subset of outcomes that researcher $r$ anticipates  |
 | $\mathbb{O}_p$       | Subset of outcomes affected by paper $p$  |
 | $o\in\mathbb{O}$   | Amount of goodness for possible outcome $o$   |
+| $r$                | Researcher $r$.  Refers to generic researcher or you, depending on context |
 | $p$                | Paper as a unit of research |
 | $evid$             | Evidence needed to support paper $p$ |
 | $assum$            | Assumptions |
