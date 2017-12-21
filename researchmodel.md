@@ -302,7 +302,7 @@ Since the goal is to have a positive impact on the world, it is not acceptable t
 $$E[impact | p] = P(p) \left(\sum_{o\in\mathbb{O}^{+}_p} o\times P(o|p) - \sum_{o\in\mathbb{O}^{-}_p} o\times P(o|p) \right) \gg 0 $$
 
 
-Ignoring $\mathbb{O}^{-}_p$ can lead to a crisis of conscience when the negative outcomes become widespread.    This is not unique to researchers.  Recently, [facebook execs expressed their regret in eroding democracy](https://www.youtube.com/watch?v=PMotykw0SIk), while articles about silicon valley [make similar statements](https://www.buzzfeed.com/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway?utm_term=.rmkMVmpNK#.mqWWv7ald).
+Ignoring $\mathbb{O}^{-}_p$ can lead to a crisis of conscience when the negative outcomes become widespread.  This is increasingly [important as tech integrates closer into our lives and society](http://www.argmin.net/2017/12/21/ascent-directions/).   This is not unique to researchers.  Recently, [facebook execs expressed their regret in eroding democracy](https://www.youtube.com/watch?v=PMotykw0SIk), while articles about silicon valley [make similar statements](https://www.buzzfeed.com/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway?utm_term=.rmkMVmpNK#.mqWWv7ald).
 
 The following is one that's personally scary to me:
 
