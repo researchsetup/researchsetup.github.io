@@ -39,7 +39,7 @@ $$
 
 # A "Probabilistic" Model of Research
 
-Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher means, and what it means to do [good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).  There is also a lot of advice floating around -- how can one systematically reason about the process?  
+Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher means, and what it means to do [good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).  There is also a lot of advice floating around -- where does this advice come from? How can one systematically reason about the process?  
 
 This document proposes one possible model that I use to reason about research.  I then use the model as a framing device to comment about research and ideas.  It also includes some examples when the author can think them up.  My hope is that you get bored of the document mid-way because it's blindingly obvious.  
 
