@@ -100,7 +100,7 @@ $\red{o\times P(o \| p)}$ defines the belief about whether or not the outcome $\
 Of course, you  only have a limited view of the possible outcomes of your own work!  In otherwords, $\mathbb{O}_{you} \subset \mathbb{O}$.  It is very likely that you cannot imagine all but a small number of the possible outcomes:
 
 $$\begin{align}
-|\mathbb{O}_{you}| &\ll \mathbb{O}_p\\
+|\mathbb{O}_{you}| &\ll |\mathbb{O}_p|\\
 \mathbb{O}_{you} &\not\subseteq \mathbb{O}_p
 \end{align}$$
 
@@ -114,7 +114,7 @@ s.t. $\nexists p'\ E[impact|p'] \gg E[impact|p^*]$
 </center>
 
 
-The _Novelty_ constraint says that $p^*$ is better than any alternative $p'$ in related work.  Also, note that the input is $\mathbb{O}_r$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$)
+The _Novelty_ constraint says that $p^*$ is better than any alternative $p'$ in related work.  Also, note that the input is $\mathbb{O}_r$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$.
 
 
 # Takeaways

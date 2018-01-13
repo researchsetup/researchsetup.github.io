@@ -1,8 +1,8 @@
 html {
-  font-family: "Open Sans", georgia, helvetica, arial;
-  font-weight: 300;
 }
 body {
+  font-family: helvetica, arial;
+  font-weight: 300;
   background: white;
   padding: 25px;
   min-width:600px;
