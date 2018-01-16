@@ -317,6 +317,8 @@ Above, I asserted that a PhD is a certificate suggesting that $P(p\|evid,assum) 
 
 $$\sum_{p \in \mathbb{P}} E[impact | p] > \tau$$
 
+Check back with me in a couple years to see if this panned out.
+
 
 ### <a name="thecrowd"></a>Following the Crowd 
 
