@@ -97,24 +97,24 @@ $\red{o\times P(o \| p)}$ defines the belief about whether or not the outcome $\
 
 ### <a name="researchopt"></a>Research as Optimization 
 
-Of course, you  only have a limited view of the possible outcomes of your own work!  In otherwords, $\mathbb{O}_{you} \subset \mathbb{O}$.  It is very likely that you cannot imagine all but a small number of the possible outcomes:
+Of course, you  only have a limited view of the possible outcomes $\mathbb{O}_r$, where in this case $r=you$. It is very likely that you cannot imagine all but a small number of the possible outcomes, and some that you imagine may also be wrong:
 
 $$\begin{align}
-|\mathbb{O}_{you}| &\ll |\mathbb{O}_p|\\
-\mathbb{O}_{you} &\not\subseteq \mathbb{O}_p
+|\mathbb{O}_{r}| &\ll |\mathbb{O}_p|\\
+\mathbb{O}_{r} &\not\subseteq \mathbb{O}_p
 \end{align}$$
 
 
-Thus, the optimization problem is simple. 
+The optimization problem is simple to state:
 
 <center style="font-size: 15pt; font-family: courier; margin-bottom: 1em;">
-Given $\mathbb{O}_r$, pick the best paper $p^*$ that maximizes $E[impact|p^*]$   
+Given $\mathbb{O}_{r}$, pick the best paper $p^*$ that maximizes $E[impact|p^*]$   
 <br/>
 s.t. $\nexists p'\ E[impact|p'] \gg E[impact|p^*]$
 </center>
 
 
-The _Novelty_ constraint says that $p^*$ is better than any alternative $p'$ in related work.  Also, note that the input is $\mathbb{O}_r$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$.
+The _Novelty_ constraint says that $p^*$ is better than any alternative $p'$ in related work.  Also, note that the input is $\mathbb{O}_{r}$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$.
 
 
 # Takeaways
@@ -126,7 +126,7 @@ There are many takeaways that we can make based studying the above optimization 
 
 #### <a name="phdcert"></a>PhD as Certification 
 
-The PhD is not magical.  You should think of it as certifying that you have _sufficient_ knowledge to conduct research. In other words, given a $p$ and $assum$, you can ensure that:
+The PhD is not magical.  You can think of it as certifying that you have _sufficient_ knowledge to conduct research. In other words, given a $p$ and $assum$, you can ensure that:
 
 $$\begin{align}
 \blue{P(evid | you)} &> threshold\\
@@ -201,7 +201,7 @@ Since most terms are fixed, it naturally leads to emphasis on system design, ass
 <strong>The Vision(ary) paper</strong> highlights a set of outcomes so different from the rest of the research community that it's worth getting the word out because there's potential to increase $E[impact]$ of the whole community. 
 
 {:.example}
-By 2011, Mechanical Turk (MTurk) had been around for about 6 years, often for labeling and data cleaning/collection tasks, and was getting attention from HCI communities.  [Adam Marcus](http://www.marcua.net) suggested that MTurk was at a price point where workers could be though of as databases themselves.  Despite lots of work on thinking of sensors, the web, remote machines, files as databases, thinking through the implications of fleshy, human databases was pretty exciting and we wrote a ["vision paper"](http://sirrice.github.io/files/papers/qurk-cidr11.pdf) around the idea.   It sketched an architecture and slapped together a language ($P(evid\|r)$ was mediocre), made hand-wavy assumptions (low $P(assum)$), and focused on the potential of great outcomes (high $\mathbb{O}_p$).
+By 2011, Mechanical Turk (MTurk) had been around for about 6 years, often for labeling and data cleaning/collection tasks, and was getting attention from HCI communities.  [Adam Marcus](http://www.marcua.net) suggested that MTurk was at a price point where workers could be thought of as databases themselves.  Despite lots of work on modeling sensors, the web, remote machines, and files as databases, thinking through the implications of fleshy, human databases was pretty exciting and we wrote a ["vision paper"](http://sirrice.github.io/files/papers/qurk-cidr11.pdf) around the idea.   It sketched an architecture and slapped together a language ($P(evid\|r)$ was mediocre), made hand-wavy assumptions (low $P(assum)$), and focused on the potential of great outcomes (high $\mathbb{O}_p$).
 
 <strong>The "Perfect" paper</strong> scores high on every term in our model.  These tend to win "test of time" awards later on, because most people can't predict how $\mathbb{O}_p$ will actually play out.
 
@@ -215,7 +215,7 @@ Since the paper proved correctness, $P(evid\|you)P(p\|evid,assum) = 1$.  The ass
 
 #### <a name="lpu"></a>Least Publishable Units 
 
-There is a subclass of paper widely considered as [Least Publishable](./files/lpu.pdf) [Units](https://en.m.wikipedia.org/wiki/Least_publishable_unit)  (LPUs).  These are technically correct, technically correct, but not really meaningful.  You can verify if any combination of the following hold:
+There is a subclass of paper widely considered as [Least Publishable](./files/lpu.pdf) [Units](https://en.m.wikipedia.org/wiki/Least_publishable_unit)  (LPUs).  These are technically correct, but not really meaningful.  You can verify if any combination of the following hold:
 
 * $\red{P(assum)} \approx 0$ meaning the problem is made up.
 * $\red{P(o \| p)} \le 0$ for $o\in \mathbb{O}_p$  meaning it doesn't have a lot of positive outcomes.
@@ -270,11 +270,11 @@ $$P(r\ reads\ p) = P(aware\ of\ p) P(buys\ p's\ ideas)$$
 Viewing "marketing" through an optimization lens helps us think about two common types of sub-optimal strategies (since $P(buys\ p's\ ideas)\approx1$):  
 
 1. $P(aware\ of\ p)\gg P(impact \| r)$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
-2. $P(aware\ of\ p)\ll P(impact \| r)$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketing enough for people to know about it.   
+2. $P(aware\ of\ p)\ll P(impact \| r)$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketed enough for people to know about it.   
 
-Both are suboptimal because it distracts from other impactful work (the first case), or deprives others from doing impactful work (the second case).  I consider the second case a bigger issue because it is more widespread and requires training.  
+Both are suboptimal because it misleads others  (the first case), or deprives others from doing impactful work (the second case).  I consider the second case a bigger issue because it is more widespread and requires training.  
 
-Why are papers undermarketed?  My hypothesis is that $P(impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Hopefully sampling from positive colleagues is a good way of compensating for this bias.  
+Why are papers undermarketed?  My hypothesis is that $P(impact\| p)$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Consider applying an estimation procedure; for instance, sampling from colleagues is a good way of compensating for your internal bias.  
 
 
 
@@ -324,12 +324,17 @@ Following the crowd means that $P(assum\| now) \approx 1$.  If this is the case,
 
 In this setting, one hopes that $P(evid \| you) \gg P(evid \| r')$ so that you can out-execute others.
 
+{:.example}
+It is PhD admissions season and seemingly every applicant wants to do deep learning.  Why?  Because it's in the news (heavily marketed) and sounds exciting ($\mathbb{O}_{deeplearning}$ perceived to be high). But if faculty are looking for candidates to help them maximize $E[\circ]$, then how can a given PhD candidate signal that this is the case?  How do you signal vision?  
 
 ### <a name="hammer"></a>Hammers Without Nails 
 
 It is easy to develop systems or techniques by focusing on getting $P(p\|evid,assum)P(evid\|you) \approx 1$ (the Hammer).  This assumes that the hammer is indeed useful ($\mathbb{O}_p \ne \emptyset$).  However, since you're on the hook looking for positive outcomes (the Nails), it runs the risk of coming up empty handed:
 
 $$\mathbb{O}_r \cap \mathbb{O}_p \approx \emptyset$$
+
+
+Japan has a term for this: [Chindōgu](https://en.m.wikipedia.org/wiki/Chind%C5%8Dgu) (珍道具).  Wikipedia says it "is the Japanese art of inventing ingenious everyday gadgets that seem like an ideal solution to a particular problem, but are in fact useless."
 
 
 <!--
@@ -342,7 +347,7 @@ $$P(p|you)$$
 
 ### <a name="perfection"></a>Perfection is the Enemy of Progress 
 
-It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[impact\|p]$ will actually increase.
+It is often tempting to focus on building the perfect system, getting all possible results, fixing all the bugs, or otherwise writing the perfect paper.  This is equivalent to focusing on $P(evid\|you) = 1$.  Based on the model, it is clear that doing so has decreasing marginal benefit unless $P(assum)$ and $P(o\|p)$ are so high that $E[impact\|p]$ will actually increase.  This seems obvious, but I see it a lot.
 
 Learn more on the [wikipedia page](https://en.m.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
 
