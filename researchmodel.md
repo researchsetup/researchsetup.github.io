@@ -307,7 +307,7 @@ Ignoring $\mathbb{O}^{-}_p$ can lead to a crisis of conscience when the negative
 The following is one that's personally scary to me:
 
 {:.example}
-The recent research in [automatically generating lipsynced videos](https://www.youtube.com/watch?v=9Yq67CjDqvw) is arguably a technology that can have deeply negative consequences.  One reason is that it makes it so easy to generate realistic-seeming videos that it fundamentally sheds doubt on what evidence can be believed.  The amount of doctored videos can be generated at a higher rate than people can discern and verify them, and encourage people to simply give up and not trust any evidence.
+The recent research in [automatically generating lipsynced videos](https://www.youtube.com/watch?v=9Yq67CjDqvw) is arguably a technology that can have deeply negative consequences.  One reason is that it makes it so easy to generate realistic-seeming videos that it fundamentally sheds doubt on what evidence can be believed.  The amount of doctored videos can be generated at a higher rate than people can discern and verify them, and [subtlely erodes discourse in a way more insidious than simply banning speech](https://www.wired.com/story/free-speech-issue-tech-turmoil-new-censorship/).
 
 
 
