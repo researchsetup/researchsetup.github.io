@@ -57,7 +57,17 @@ My hope is that it encourages you to reflect on how you can model and think abou
 {:.small}
 Thanks to the following for their feedback on earlier versions: [thibault](sellam.me), [yifan](https://people.eecs.berkeley.edu/~yifanwu/), [marcua](http://marcua.net), [aditya](http://data-people.cs.illinois.edu), [jaan](https://jaan.io/), [gu](https://twitter.com/lydiagu), [vijay](http://www.cs.utexas.edu/~vijay/).
 
-[Pull requests and issues are appreciated!](https://github.com/researchsetup/researchsetup.github.io)
+If you have ideas of how to improve this document, please submit a [pull request or issue](https://github.com/researchsetup/researchsetup.github.io), or find me [on Twitter](http://www.twitter.com/sirrice).
+
+<a class="btn twitter-share-button"
+  target="_tweet"
+  href="https://twitter.com/intent/tweet?text=A%20probabilistic%20model%20of%20research%20http://researchsetup.github.io/researchmodel%20by%20@sirrice"
+	style="width: 10em;">
+	<i></i>
+  <span>Tweet this article</span>
+</a>
+
+
 
 # <a name="thesimplemodel"/>The Model 
 
@@ -318,7 +328,7 @@ $$E[Impact | Your\ Research] \gg E[Impact | Your\ Nonresearch]$$
 
 For some people, it turns out this assumption is not true, and it is better to leave research and do non-research work.   For instance, it can be joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  All of these are totally totally cool.  Remember, opportunities are endless!  
 
-Some may try to suggest that you're not "cut out" for research, implying that $Evidence\rightarrow 0$.  Hopefully at this point you would agree that the term is independent of this choice. 
+Some may try to suggest that you're not "cut out" for research, implying that $Evidence\rightarrow 0$.  Hopefully at this point you would agree that the term is independent of this larger choice. 
 
 
 ### <a name="badoutcomes"></a>Unintended Outcomes 
@@ -409,20 +419,33 @@ Hopefully by this point, it is obvious why problem hardness does not necessarily
 
 ### <a name="industry"></a>Academia vs Industry 
 
-Finally, a comment about doing research in academia vs industry.  Arguably, industry has way more resources than academics, so academics should be selective about the class of papers to work on.  In other words, we can assume that for the most part, $P(Evidence\|Industry)\gg P(Evidence\|You)$, however industry has pressure to show short-term results.  Thus, the ideal class of problems are ones where $P(Assumption \| Now) \approx 0$ and $P(Assumption\|Future) \approx 1$.  Here's a made up diagram illustrating the point:
+Finally, a comment about doing research in academia vs industry.  Arguably, industry has far more resources than academics, so academics should be selective about the class of papers to work on.  In other words, we can assume that for the most part, $P(Evidence\|Industry)\gg P(Evidence\|You)$, however industry has pressure to show short-term results.  Thus, the ideal class of problems are ones where $P(Assumption \| Now) \approx 0$ and $P(Assumption\|Future) \approx 1$.  Here's a made up diagram illustrating the point:
 
 <img src="./files/images/researchmodel.png" width="300px"/>
 
 
+# Closing Thoughts
 
+This document argues for modeling the process of research as an optimization problem, and discussed how it can serve as a framework to critically view different facets of the research enterprise.
+It proposed one possible, and [imperfect](#perfection), model to use as a running example.
+In my opinion, the most valuable takeaway is the decomposition process from research goals to probabilistic terms,  and viewing this through an optimization lens.
+
+If you have ideas of how to improve this document, please submit a [pull request or issue](https://github.com/researchsetup/researchsetup.github.io), or find me [on Twitter](http://www.twitter.com/sirrice).
+
+
+<a class="btn twitter-share-button"
+  target="_tweet"
+  href="https://twitter.com/intent/tweet?text=A%20probabilistic%20model%20of%20research%20http://researchsetup.github.io/researchmodel%20by%20@sirrice"
+	style="width: 10em;">
+	<i></i>
+  <span>Tweet this article</span>
+</a>
 
 
 
 # <a name="appendix"/>Appendix 
 
-The appendix describes how we originally decomposed $Impact$ into the model described in the body of this document.    In my opinion, the most valuable takeaway is the mental process of decomposing research goals into probabilistic terms that are meaningful to yourself, as well as viewing this through an optimization lens.   The specific decomposition in this document is of less interest.
-
-
+The appendix describes how we originally decomposed $Impact$ into the model described in the body of this document.    
 
 ### The Model
 
