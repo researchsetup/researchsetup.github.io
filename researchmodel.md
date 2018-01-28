@@ -137,6 +137,8 @@ Given $\mathbb{O}_{limited}$, pick the best paper $paper^*$ that <br/>
 maximizes expected impact $E[Impact | paper^*]$
 </center>
 
+This formulation can be helpful because we can borrow from existing work such as estimation theory, (non)convex optimization, probability theory, etc.  It also makes clear that we are optimizing under partial, often biased, information ($\mathbb{O}_{limited}$).
+
 
 # Takeaways
 
