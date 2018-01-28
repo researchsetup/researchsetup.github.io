@@ -110,10 +110,12 @@ We will use the following diagram throughout this document to illustrate concept
 <div id="together1"></div>
 <script>plot("#together1", [100, 100, 100, 100])</script>
 
-However, if any term is lower, then the inner circle will be smaller.  For instance, if the assumptions are unlikely and the experimental design (hypothesis) is shakey, then:
+However, if any term is lower, then the inner bar will be shorter.  For instance, if the assumptions are unlikely and the experimental design (hypothesis) is shakey, then:
 
 <div id="together2"></div>
 <script>plot("#together2", [50, 100, 20, 100])</script>
+
+The specific values of each term is less important than which terms are the focus of attention, and will maximize $Impact$.
 
 ### <a name="researchopt"/>Research as Optimization
 
