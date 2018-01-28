@@ -37,7 +37,6 @@ $$\definecolor{blue}{RGB}{18,110,213}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 $$
 
-
 # A "Probabilistic" Model of Research
 
 Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher even means!
