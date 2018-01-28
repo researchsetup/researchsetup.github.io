@@ -295,8 +295,8 @@ $$P(Reads\ Paper) \propto Marketing = P(Awareness)\times P(Convinced)$$
 
 Viewing "marketing" through an optimization lens helps us think about two common types of sub-optimal strategies (since $P(Convinced)\approx1$):  
 
-1. $Marketing\gg E[Impact]$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
-2. $Marketing\ll E[impact]$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketed enough for people to know about it.   
+* $Marketing\gg E[Impact]$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
+* $Marketing\ll E[impact]$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketed enough for people to know about it.   
 
 Both are suboptimal because it misleads others  (the first case), or deprives others from doing impactful work (the second case).  The first case is a waste of resources, but does not reduce the ultimate impact of the paper.  I think the latter case is a bigger issue because it directly reduces the impact of the paper, since people will simply not know about it.  Also, the latter is more widespread and can be ameliorated via training.  
 
@@ -380,12 +380,19 @@ It is often tempting to focus on building the perfect system, getting all possib
 
 Learn more on the [wikipedia page](https://en.m.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
 
-{:.example}
-<span id="perfection1"></span>
-<span id="perfection2"></span>
-<span id="perfection3"></span><br/>
+<div id="perfection1"></div>
+<div id="perfection2"></div>
+<div id="perfection3"></div><br/>
 Notice how the impact term basically did not change even as $Evidence\rightarrow 1$.  However improving the Assumptions to the same level as the Evidence dramatically improves Impact.  It's simple multiplication.
 
+The desire for perfection can creep up in many ways:
+
+* Not releasing a project because it is not good neough
+* Seeking to survey all possible related work before starting
+* Editing and re-editing a paper because its writing style is not perfect
+* Working on areas where the $Assumptions$ are well established and the $Outcomes$ are nearly as good as they could get: forever polishing a round ball.
+
+A final note: avoiding perfection should not be viewed as discouraging you to strive towards excellence.    The former is with respect to an external _goal_ such as a project or paper, whereas the latter is a life-long process of self improvement.
 
 <script>plot("#perfection1", [100, 70, 30, 100], {highlight: ["evid", "impact"]})</script>
 <script>plot("#perfection2", [100, 100, 30, 100], {highlight: ["evid", "impact"]})</script>
