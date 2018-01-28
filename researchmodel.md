@@ -41,8 +41,9 @@ $$
 # A "Probabilistic" Model of Research
 
 Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher even means!
-What does [doing good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html).
-There is also a lot of advice floating around -- where does this advice come from? How can one systematically reason about the process? 
+What does [doing good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html) mean?.
+There is also a lot of advice floating around -- where does this advice come from?  Is there a model from which most advice emanates?
+How can one systematically reason about the process? 
 
 Probabilistic models have been enormously successful as a framework for deconstructing and modeling real world phenomena.
 Can we decompose research and view it as an optimization problem? By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed partial mechanisms towards solving this optimization problem?
@@ -95,9 +96,13 @@ $$P(paper) = P(hypothesis) \times P(evidence) \times P(assumptions)$$
 
 We can now talk about the expect Impact of a paper based on the possible outcomes and the likelihood of the paper!
 
-$$E[Impact | paper] = P(paper) \times E[Outcome | paper]$$
+$$\begin{align}
+E[Impact | paper] =& P(paper) \times E[Outcome | paper]\\
+                   & P(hypothesis) \times P(evidence) \times P(assumptions) \times E[Outcome | paper]
+\end{align}
+$$
 
-If we expand and simplify the notation, we end up with $Impact$ being composed of four parts:
+If we simplify the notation, we end up with $Impact$ being composed of four parts:
 
 $$Impact = Hypothesis\times Evidence\times Assumptions\times Outcome$$
 
