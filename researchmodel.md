@@ -98,7 +98,7 @@ We can now talk about the expect Impact of a paper based on the possible outcome
 
 $$\begin{align}
 E[Impact | paper] =& P(paper) \times E[Outcome | paper]\\
-                   & P(hypothesis) \times P(evidence) \times P(assumptions) \times E[Outcome | paper]
+                  =& P(hypothesis) \times P(evidence) \times P(assumptions) \times E[Outcome | paper]
 \end{align}
 $$
 
