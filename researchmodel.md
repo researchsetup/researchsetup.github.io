@@ -401,7 +401,7 @@ Finally, a comment about doing research in academia vs industry.  Arguably, indu
 
 # <a name="appendix"/>Appendix 
 
-The appendix describes how we decompose $Impact$ into the model described in the body of this document.  In my opinion, the mental process of decomposition is the most important takeaway, since no single model will fit every researcher.
+The appendix describes how we originally decomposed $Impact$ into the model described in the body of this document.    In my opinion, the most valuable takeaway is the mental process of decomposing research goals into probabilistic terms that are meaningful to yourself, as well as viewing this through an optimization lens.   The specific decomposition in this document is of less interest.
 
 
 

@@ -9,14 +9,17 @@
 
 
 <div class="row">
+  <!--
   <div class=" col-md-2 sidebar">
     <div>
     {% capture vars %}{% include vars.md %}{% endcapture %}
-    <!--{{ vars | markdownify }}-->
+    {{ vars | markdownify }}
     </div>
   </div>
+  -->
   <div class="col-md-8 col-md-offset-2">
     {{content}}
+    <div style="clear:both"/>
   </div>
 </div>
 
