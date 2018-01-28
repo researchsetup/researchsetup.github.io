@@ -316,6 +316,10 @@ Since the goal is to have a positive impact on the world, it is not acceptable t
 
 This would seem obvious, but is unfortunately often not the case.  In fact, ignoring possible negative outcomes can lead to a crisis of conscience when the negative outcomes become widespread.  This is increasingly [important as tech integrates closer into our lives and society](http://www.argmin.net/2017/12/21/ascent-directions/).   This is not unique to researchers.  Recently, [facebook execs expressed their regret in eroding democracy](https://www.youtube.com/watch?v=PMotykw0SIk), while articles about silicon valley [make similar statements](https://www.buzzfeed.com/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway?utm_term=.rmkMVmpNK#.mqWWv7ald).
 
+<div id="unintend"/>
+<script>plot("#unintend", [100, 80, 90, -80])</script>
+
+
 The following is one that's personally scary to me:
 
 {:.example}
@@ -334,7 +338,7 @@ Check back with me in a couple years to see if this panned out.
 
 ### <a name="thecrowd"></a>Following the Crowd 
 
-Following the crowd means that the $Assumption\appox 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve, and the desirable outcomes. 
+Following the crowd means that the $Assumption\approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve, and the desirable outcomes. 
 
 In this setting, one hopes that your ability to collect $Evidence$ far exceeds others', so that you can out-execute others.  
 
@@ -367,12 +371,14 @@ Learn more on the [wikipedia page](https://en.m.wikipedia.org/wiki/Perfect_is_th
 
 {:.example}
 <span id="perfection1"></span>
-<span id="perfection2"></span><br/>
-Notice how the impact term basically did not change even as $Evidence\rightarrow 1$.
+<span id="perfection2"></span>
+<span id="perfection3"></span><br/>
+Notice how the impact term basically did not change even as $Evidence\rightarrow 1$.  However improving the Assumptions to the same level as the Evidence dramatically improves Impact.  It's simple multiplication.
 
 
-<script>plot("#perfection1", [50, 70, 50, 50], {highlight: ["evid", "impact"]})</script>
-<script>plot("#perfection2", [50, 100, 50, 50], {highlight: ["evid", "impact"]})</script>
+<script>plot("#perfection1", [100, 70, 30, 100], {highlight: ["evid", "impact"]})</script>
+<script>plot("#perfection2", [100, 100, 30, 100], {highlight: ["evid", "impact"]})</script>
+<script>plot("#perfection3", [100, 70, 70, 100], {highlight: ["assum", "impact"]})</script>
 
 
 ### <a name="hardprobs"></a>Hard Problems vs Simple Problems 
