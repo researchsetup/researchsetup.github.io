@@ -3,16 +3,19 @@
 </head>
 <body>
 
+<script src="./files/js/d3.js" type="text/javascript"></script>
+<script src="./files/js/underscore.js" type="text/javascript"></script>
+<script src="./files/js/plot.js" type="text/javascript"></script>
 
 
 <div class="row">
-  <div class=" col-md-4 sidebar">
+  <div class=" col-md-2 sidebar">
     <div>
     {% capture vars %}{% include vars.md %}{% endcapture %}
-    {{ vars | markdownify }}
+    <!--{{ vars | markdownify }}-->
     </div>
   </div>
-  <div class="col-md-8 col-md-offset-4">
+  <div class="col-md-8 col-md-offset-2">
     {{content}}
   </div>
 </div>
@@ -34,8 +37,7 @@ a:hover { color: white; background: {{page.color}}; }
 
 </html>
 
-<script>
-</script>
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}

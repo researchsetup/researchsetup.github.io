@@ -48,6 +48,20 @@ a {
   color: hsla(200, 70%, 55%, 1);
 }
 
+.button {
+  border: 1px solid gray;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5em;
+  cursor: pointer;
+}
+.button:hover {
+  background: hsla(200, 70%, 55%, 1);
+  color: white;
+}
+
+
 a:hover {
   text-decoration: none;
   color: white;
