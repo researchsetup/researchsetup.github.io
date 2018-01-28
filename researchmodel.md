@@ -52,6 +52,11 @@ This document proposes _one possible_ decomposition based on how I currently thi
 It then uses the model as a framing device to comment about research and ideas.
 My hope is that it encourages you to reflect on how you can model and think about your own research.
 
+
+<style> .small { font-size: 10pt; }</style>
+{:.small}
+Thanks to the following for their feedback on earlier versions: [thibault](sellam.me), [yifan](https://people.eecs.berkeley.edu/~yifanwu/), [marcua](http://marcua.net), [aditya](http://data-people.cs.illinois.edu), [jaan](https://jaan.io/), [gu](https://twitter.com/lydiagu), [vijay](http://www.cs.utexas.edu/~vijay/).
+
 [Pull requests and issues are appreciated!](https://github.com/researchsetup/researchsetup.github.io)
 
 # <a name="thesimplemodel"/>The Model 
@@ -305,7 +310,7 @@ Clearly there is a strong assumption of the following, based on your desired out
 $$E[Impact | Your\ Research] \gg E[Impact | Your\ Nonresearch]$$
 
 
-For some people, it turns out this assumption is not true, and it is better to leave research and do non-research work.   For instance, it can be joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  All of these are totally totally cool.
+For some people, it turns out this assumption is not true, and it is better to leave research and do non-research work.   For instance, it can be joining a non-profit, finding an arbitrage opportunity, social entrepreneurship, teaching, etc.  All of these are totally totally cool.  Remember, opportunities are endless!  
 
 Some may try to suggest that you're not "cut out" for research, implying that $Evidence\rightarrow 0$.  Hopefully at this point you would agree that the term is independent of this choice. 
 
@@ -314,10 +319,11 @@ Some may try to suggest that you're not "cut out" for research, implying that $E
 
 Since the goal is to have a positive impact on the world, it is not acceptable to simply state that one is "developing technology for technology's sake".    This is equivalent to completely ignoring the $Outcome$ or only focusing on positive outcomes.  However in reality, we would like to make sure that the positive outcomes far outweigh the negative.
 
-This would seem obvious, but is unfortunately often not the case.  In fact, ignoring possible negative outcomes can lead to a crisis of conscience when the negative outcomes become widespread.  This is increasingly [important as tech integrates closer into our lives and society](http://www.argmin.net/2017/12/21/ascent-directions/).   This is not unique to researchers.  Recently, [facebook execs expressed their regret in eroding democracy](https://www.youtube.com/watch?v=PMotykw0SIk), while articles about silicon valley [make similar statements](https://www.buzzfeed.com/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway?utm_term=.rmkMVmpNK#.mqWWv7ald).
-
 <div id="unintend"/>
 <script>plot("#unintend", [100, 80, 90, -80])</script>
+
+
+This would seem obvious, but is unfortunately often not the case.  In fact, ignoring possible negative outcomes can lead to a crisis of conscience when the negative outcomes become widespread.  This is increasingly [important as tech integrates closer into our lives and society](http://www.argmin.net/2017/12/21/ascent-directions/).   This is not unique to researchers.  Recently, [facebook execs expressed their regret in eroding democracy](https://www.youtube.com/watch?v=PMotykw0SIk), while articles about silicon valley [make similar statements](https://www.buzzfeed.com/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway?utm_term=.rmkMVmpNK#.mqWWv7ald).
 
 
 The following is one that's personally scary to me:
