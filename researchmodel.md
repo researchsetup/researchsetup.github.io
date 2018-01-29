@@ -39,13 +39,13 @@ $$
 
 # A "Probabilistic" Model of Research
 
-Research is a complicated process.  It can be ovewhelming because it's not clear what being a good researcher even means!
+Research is a complicated process.  It can be overwhelming because it's not clear what being a good researcher even means!
 What does [doing good work](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html) mean?.
 There is also a lot of advice floating around -- where does this advice come from?  Is there a model from which most advice emanates?
 How can one systematically reason about the process? 
 
 Probabilistic models have been enormously successful as a framework for deconstructing and modeling real world phenomena.
-Can we decompose research and view it as an optimization problem? By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed partial mechanisms towards solving this optimization problem?
+Can we decompose research and view it as an optimization problem? *optimization problems need not be probabilistic*. By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed as partial mechanisms towards solving this optimization problem?
 
 
 This document proposes _one possible_ decomposition based on how I currently think about research.
@@ -71,13 +71,15 @@ If you have ideas of how to improve this document, please submit a [pull request
 
 # <a name="thesimplemodel"/>The Model 
 
-Let's start by considering the notion of $Impact$ for a unit of research, meaning the amount that the world changes if a given unit of research is performed.    This is a deliberatly vague notion, because $Impact$ is based on your own value system and what you consider important.  This could be happiness, or money, or changing how people think, or anything else.
+Let's start by considering the notion of $Impact$ for a unit of research, meaning the amount that the world changes if a given unit of research is performed.    This is a deliberately vague notion, because $Impact$ is based on your own value system and what you consider important.  This could be happiness, or money, or changing how people think, or anything else.
 
 For simplicity, let's assume a paper is the unit of research, and we would like to estimate its Impact.  To do so, let's see how it relates to impact, and break down what it takes to produce a paper (unit of research). [The gory modeling details are in the appendix](#appendix)
 
 We can imagine a possible outcome $o$, which could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc.  Producing a paper changes how likely a given outcome will happen, or in other words, the outcome can be _conditioned_ on the paper:
 
 $$P(o | paper)$$
+
+*you want to measure lift -- factor out $P(o)$. You might also model a confounding factor: the likelihood that someone else produces the paper. That's an important one to me ... I don't like the "race to publish" areas. If you like those areas, you could do the fancier modeling of whether someone else produces the paper before you do.*
 
 If we were to sum over all possible outcomes $\mathbb{O}$, it would represent the likely outcome value assuming the paper is successfully produced.  This is basically the expected **Outcome**, where $1$ means the best possible expected outcome, and $0$ means the worst possible:
 
@@ -103,7 +105,7 @@ $$P(paper) = P(hypothesis) \times P(evidence) \times P(assumptions)$$
 
 ### Putting it Together
 
-We can now talk about the expect Impact of a paper based on the possible outcomes and the likelihood of the paper!
+We can now talk about the expected Impact of a paper based on the possible outcomes and the likelihood of the paper!
 
 $$\begin{align}
 E[Impact | paper] =& P(paper) \times E[Outcome | paper]\\
