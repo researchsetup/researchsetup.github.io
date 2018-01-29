@@ -31,7 +31,6 @@ General Takeaways
 * [Hard Problems vs Simple Problems](#hardprobs)
 * [Academia vs Industry](#industry)
 
-[Appendix](#appendix)
 
 $$\definecolor{blue}{RGB}{18,110,213}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
@@ -54,7 +53,7 @@ Remember that it is just one example of systematically modeling and thinking abo
 
 <style> .small { font-size: 10pt; }</style>
 {:.small}
-Thanks to the following for their feedback on earlier versions: [thibault](sellam.me), [yifan](https://people.eecs.berkeley.edu/~yifanwu/), [marcua](http://marcua.net), [aditya](http://data-people.cs.illinois.edu), [jaan](https://jaan.io/), [gu](https://twitter.com/lydiagu), [vijay](http://www.cs.utexas.edu/~vijay/), [jmh](http://db.cs.berkeley.edu/jmh/).
+Thanks to the following for their feedback on earlier versions: [sellam](sellam.me), [yifan](https://people.eecs.berkeley.edu/~yifanwu/), [marcua](http://marcua.net), [aditya](http://data-people.cs.illinois.edu), [jaan](https://jaan.io/), [gu](https://twitter.com/lydiagu), [vijay](http://www.cs.utexas.edu/~vijay/), [jmh](http://db.cs.berkeley.edu/jmh/).
 
 If you have ideas of how to improve this document, please submit a [pull request or issue](https://github.com/researchsetup/researchsetup.github.io), or find me [on Twitter](http://www.twitter.com/sirrice).
 
@@ -72,7 +71,9 @@ If you have ideas of how to improve this document, please submit a [pull request
 
 Let's start by considering the notion of $Impact$ for a unit of research, meaning the amount that the world changes if a given unit of research is performed.    This is a deliberately vague notion, because $Impact$ is based on your own value system and what you consider important.  This could be happiness, or money, or changing how people think, or anything else.
 
-For simplicity, let's assume a paper is the unit of research, and we would like to estimate its Impact.  To do so, let's see how it relates to impact, and break down what it takes to produce a paper (unit of research). [The gory modeling details are in the appendix](#appendix)
+For simplicity, let's assume a paper is the unit of research, and we would like to estimate its Impact.  To do so, let's see how it relates to impact, and break down what it takes to produce a paper (unit of research). 
+
+#### Outcomes
 
 We can imagine a possible outcome $o$, which could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc.  Producing a paper changes how likely a given outcome will happen.  In marketing, this is called _lift_, which means how much a treatment (producing the paper) differs from the control.  In our case, we simplify the control to be not accounting for the paper at all:
 
@@ -82,9 +83,13 @@ If we were to sum over all possible outcomes $\mathbb{O}$, it would represent th
 
 $$\begin{align}
 E[Outcome|paper] =& \sum_{o_i\in\mathbb{O}} o_i \times P(o_i | paper) - P(o_i)\\
-                 =& \left(\sum_{o_i\in\mathbb{O}} o_i \times P(o_i | paper)\right) - P(\mathbb{O})
+                 =& \left(\sum_{o_i\in\mathbb{O}} o_i \times P(o_i | paper)\right) - \cancelto{0}{P(\mathbb{O})}
 \end{align} $$
 
+
+For the purposes of this discussion, we will ignore the control term $P(\mathbb{O})$ by setting it to $0$, but keep in mind that it embodies concepts such as related work and how industry will naturally progress.  If interested, I encourage you to further model this component and explore its implications!
+
+#### Papers
 
 But what does it take to produce a paper?  There are really three elements:
 
@@ -108,8 +113,9 @@ $$P(paper) = P(hypothesis) \times P(evidence) \times P(assumptions)$$
 We can now talk about the expected Impact of a paper based on the possible outcomes and the likelihood of the paper!
 
 $$\begin{align}
-E[Impact | paper] =& P(paper) \times E[Outcome | paper]\\
-                  =& P(hypothesis) \times P(evidence) \times P(assumptions) \times E[Outcome | paper]
+E[Impact | paper] = &P(paper) \times E[Outcome | paper]\\
+                  = &P(hypothesis) \times P(evidence) \times \\
+                    &P(assumptions) \times E[Outcome | paper]
 \end{align}
 $$
 
@@ -191,7 +197,9 @@ It is clear that one hopes to admit graduate students that have the capacity to 
 
 The quantifiable ones that are easier to measure are also what the PhD certifies: $Hypothesis$ and $Evidence$.  If you have done past research or complex projects, they can be used to demonstrate _technical competence_.  This simply means it is more likely that you can learn and complete projects of interest.    This doesn't mean you need to know everything - that's the purpose of taking relevant classes, working on starter research projects, and interning.    If you assume that faculty are risk adverse, they will look for students with more samples, or samples that have high certainty described in recommendation letters.
 
-The intangible components are related to ideas and vision.  This is part of the value of the essay.    It is harder to illustrate this unless you have led projects in the past.  If this is the case, describe the positive outcomes enabled by your work!   Show that you have vision by remarking about ways to solve our optimization problem. These could be, but are not limited to:
+The intangible components are related to ideas and vision.  This is part of the value of the essay.    It is harder to illustrate this unless you have led projects in the past.  If this is the case, describe the positive outcomes enabled by your work!   Show that you have vision by remarking about ways to solve our optimization problem. 
+
+Personally, once I am convinced that an applicant is capable of learning the technical components of whatever a set of research directions might need, I soley focus on the Vision and Ideas components of the model.  These could be illustrated, but are not limited to, the following:
 
 * $Assumptions$ that may change in the future 
 * Outcomes that people are not thinking about ($\mathbb{O}_{limited}$)
@@ -290,9 +298,9 @@ In this section, we interpret many aspects of research in terms of maximizing $E
 
 There is a commonly held ideal to "let the work speak for itself", meaning that good work will be recognized and appreciated.  It implicitly discourages communication if the measure of impact is fame.    But what if we care about impact in terms of changing society, policy, lives, or even other researchers' habits and tools?
 
-That would mean that an outcome $o$ that we want is for _another_ researcher to have greater impact by using our ideas.  For this to happen, the other researcher has to both read and understand our paper:
+That would mean that an outcome $o$ that we want is for some _other_ researcher to have greater impact by using our ideas.  For this to happen, the other researcher has to both read and understand our paper:
 
-$$o \approx E[Impact | Other\ Researcher]\times P(Understands\ Paper)\times P(Reads\ Paper)$$
+$$o \approx E[Impact | Other]\times P(Understands\ Paper)\times P(Reads\ Paper)$$
  
 1. $P(Reads\ Paper)$.  The researcher must be aware of the work!  With [arXiV](https://arxiv.org/) and larger and larger conferences, it is difficult for any researcher to read everything.  Thus, she must be _convinced to read_ our paper.  Let's call this marketing, explored below.  
 2. $P(Understands\ Paper)$.    The researcher has been convinced to read your paper!  Will it be easy for her to figure out what your paper is saying?  This is about writing clearly, thoroughly, and unambiguously, so that she can take your ideas and techniques and actually use them.  This is also why examples are important to illustrate applications of your techniques/ideas.
@@ -305,13 +313,13 @@ Let's look into $P(Reads\ Paper)$, which is proportional to the amount of market
 
 $$P(Reads\ Paper) \propto Marketing = P(Awareness)\times P(Convinced)$$
 
-* $P(Awareness)$ can be called "Amount of Marketing".  This includes giving talks, writing blog posts, making tweets, posting videos, talking to journalists.
-* $P(Convinced)$ can be called "Quality of Marketing".  This is whether or not the quality of the marketing is good enough that prospective researcher considers it worthwhile.  In general, this term should be $\approx 1$.   This is why it can easily take a month or more to create a conference talk.
+1. $P(Awareness)$ can be called "Amount of Marketing".  This includes giving talks, writing blog posts, making tweets, posting videos, talking to journalists.
+1. $P(Convinced)$ can be called "Quality of Marketing".  This is whether or not the quality of the marketing is good enough that prospective researcher considers it worthwhile.  In general, this term should be $\approx 1$.   This is why it can easily take a month or more to create a conference talk.
 
 Viewing "marketing" through an optimization lens helps us think about two common types of sub-optimal strategies (since $P(Convinced)\approx1$):  
 
-* $Marketing\gg E[Impact]$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
-* $Marketing\ll E[impact]$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketed enough for people to know about it.   
+1. $Marketing\gg E[Impact]$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
+1. $Marketing\ll E[impact]$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketed enough for people to know about it.   
 
 Both are suboptimal because it misleads others  (the first case), or deprives others from doing impactful work (the second case).  The first case is a waste of resources, but does not reduce the ultimate impact of the paper.  I think the latter case is a bigger issue because it directly reduces the impact of the paper, since people will simply not know about it.  Also, the latter is more widespread and can be ameliorated via training.  
 
@@ -323,7 +331,7 @@ Why are papers undermarketed?  My hypothesis is that $E[Impact\|Paper]$ is diffi
 
 Often, it can feel like there is a race to be the first to publish before every other research group.  This makes the entire research enterprise feel like a competition, and a [zero sum](https://en.m.wikipedia.org/wiki/Zero-sum_game) game.    You could also argue that a _currently_ hot area is where there will be impact, but the model suggests that it is not the _only_ case.  
 
-It is easy to extend our model to take into account other researchers working on the same problem.  We can assume that every term ($Hypothesis$, $Assumption$, $Outcome$) are all fixed between you and the other researchers, in which case the only term to focus on is your ability to acquire the necessary $Evidence$:
+It is easy to extend our model to take into account other researchers working on the same problem.  We can assume that every term ($Hypothesis$, $Assumption$, $Outcome$) are all fixed between you and the "competing" researchers.  Thus the only term to focus on is your ability to acquire the necessary $Evidence$:
 
 $$\begin{align}
 P(Evidence) =& P(Evidence | You, Others)\\
@@ -332,7 +340,7 @@ P(Evidence) =& P(Evidence | You, Others)\\
 
 This states that the evidence term depends on you and any other researcher, and that if another researcher gets the evidence before you, then your contribute to evidence drops to $0$.  Thus your contribution $P(Evidence\|You)$ needs to be weighed by the probability others can't do the work fast enough.
 
-Given this simple model, it is clear why this is zero sum - your work reduces the impact of others' impact.  As a research community, it signals that there are not enough impactful directions to pursue (e.g., the community is drying up), or that it should prioritize exploratory or "visionary" work.
+Given this simple model, it is clear why this is zero sum - your work reduces the impact of others' impact, and vice versa.  As a research community, it signals that there are not enough impactful directions to pursue (e.g., the community is drying up), or that it should prioritize exploratory or "visionary" work.   I'll just note that there as so many important problems in the world that this is unjustified.
 
 
 ### <a name="whyresearch"></a>Why Research? 
@@ -441,7 +449,7 @@ Hopefully by this point, it is obvious why problem hardness does not necessarily
 
 Finally, a comment about doing research in academia vs industry.  Arguably, industry has far more resources than academics, so academics should be selective about the class of papers to work on.  In other words, we can assume that for the most part, $P(Evidence\|Industry)\gg P(Evidence\|You)$, however industry has pressure to show short-term results.  Thus, the ideal class of problems are ones where $P(Assumption \| Now) \approx 0$ and $P(Assumption\|Future) \approx 1$.  Here's a made up diagram illustrating the point:
 
-<img src="./files/images/researchmodel.png" width="300px"/>
+<img src="./files/images/researchmodel.png" style="margin-left: auto; margin-right: auto; max-width: 400px; min-width: 200px; width: 50%;"/>
 
 
 # Closing Thoughts
@@ -462,7 +470,7 @@ If you have ideas of how to improve this document, please submit a [pull request
 </a>
 
 
-
+<!--
 # <a name="appendix"/>Appendix 
 
 The appendix describes how we originally decomposed $Impact$ into the model described in the body of this document.    
@@ -529,3 +537,4 @@ s.t. $\nexists p'\ E[impact|p'] \gg E[impact|p^*]$
 The _Novelty_ constraint says that $p^*$ is better than any alternative $p'$ in related work.  Also, note that the input is $\mathbb{O}_{r}$ but $E[\circ]$ is defined over $$\mathbb{O}_{p^*}$$.
 
 
+-->
