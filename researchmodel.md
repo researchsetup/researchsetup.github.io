@@ -21,6 +21,7 @@ General Takeaways
 
 * [Communication](#communication)
   * [Marketing](#marketing)
+* [The Race to Publish](#race)
 * [Why Research?](#whyresearch)
 * [Unintended Outcomes](#badoutcomes)
 * [The Assistant Professorship](#assprof)
@@ -44,18 +45,16 @@ What does [doing good work](http://www.cs.virginia.edu/~robins/YouAndYourResearc
 There is also a lot of advice floating around -- where does this advice come from?  Is there a model from which most advice emanates?
 How can one systematically reason about the process? 
 
-Probabilistic models have been enormously successful as a framework for deconstructing and modeling real world phenomena.
-Can we decompose research and view it as an optimization problem? *optimization problems need not be probabilistic*. By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed as partial mechanisms towards solving this optimization problem?
+Can we decompose research and view it as an optimization problem?  By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed as partial mechanisms towards solving this optimization problem?
 
 
-This document proposes _one possible_ decomposition based on how I currently think about research.
-It then uses the model as a framing device to comment about research and ideas.
-My hope is that it encourages you to reflect on how you can model and think about your own research.
+This document proposes _one possible_ decomposition based on probabilistic modeling, and uses it as a framing device to comment on research and ideas.
+Remember that it is just one example of systematically modeling and thinking about this topic, and my hope is that it encourages you to reflect on how you can model and think about your own research.
 
 
 <style> .small { font-size: 10pt; }</style>
 {:.small}
-Thanks to the following for their feedback on earlier versions: [thibault](sellam.me), [yifan](https://people.eecs.berkeley.edu/~yifanwu/), [marcua](http://marcua.net), [aditya](http://data-people.cs.illinois.edu), [jaan](https://jaan.io/), [gu](https://twitter.com/lydiagu), [vijay](http://www.cs.utexas.edu/~vijay/).
+Thanks to the following for their feedback on earlier versions: [thibault](sellam.me), [yifan](https://people.eecs.berkeley.edu/~yifanwu/), [marcua](http://marcua.net), [aditya](http://data-people.cs.illinois.edu), [jaan](https://jaan.io/), [gu](https://twitter.com/lydiagu), [vijay](http://www.cs.utexas.edu/~vijay/), [jmh](http://db.cs.berkeley.edu/jmh/).
 
 If you have ideas of how to improve this document, please submit a [pull request or issue](https://github.com/researchsetup/researchsetup.github.io), or find me [on Twitter](http://www.twitter.com/sirrice).
 
@@ -75,15 +74,16 @@ Let's start by considering the notion of $Impact$ for a unit of research, meanin
 
 For simplicity, let's assume a paper is the unit of research, and we would like to estimate its Impact.  To do so, let's see how it relates to impact, and break down what it takes to produce a paper (unit of research). [The gory modeling details are in the appendix](#appendix)
 
-We can imagine a possible outcome $o$, which could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc.  Producing a paper changes how likely a given outcome will happen, or in other words, the outcome can be _conditioned_ on the paper:
+We can imagine a possible outcome $o$, which could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc.  Producing a paper changes how likely a given outcome will happen.  In marketing, this is called _lift_, which means how much a treatment (producing the paper) differs from the control.  In our case, we simplify the control to be not accounting for the paper at all:
 
-$$P(o | paper)$$
-
-*you want to measure lift -- factor out $P(o)$. You might also model a confounding factor: the likelihood that someone else produces the paper. That's an important one to me ... I don't like the "race to publish" areas. If you like those areas, you could do the fancier modeling of whether someone else produces the paper before you do.*
+$$P(o | paper) - P(o)$$
 
 If we were to sum over all possible outcomes $\mathbb{O}$, it would represent the likely outcome value assuming the paper is successfully produced.  This is basically the expected **Outcome**, where $1$ means the best possible expected outcome, and $0$ means the worst possible:
 
-$$E[Outcome|paper] = \sum_{o_i\in\mathbb{O}} o_i \times P(o_i | paper)$$
+$$\begin{align}
+E[Outcome|paper] =& \sum_{o_i\in\mathbb{O}} o_i \times P(o_i | paper) - P(o_i)\\
+                 =& \left(\sum_{o_i\in\mathbb{O}} o_i \times P(o_i | paper)\right) - P(\mathbb{O})
+\end{align} $$
 
 
 But what does it take to produce a paper?  There are really three elements:
@@ -176,7 +176,7 @@ Ideas: identifying great outcomes
 Vision: can you anticipate the future?
 
 * One aspect is to anticipating the future by  identifying assumptions that are currently not true ($\approx 0$), but will likely be true in the future.  Companies like Gartner try to do this for you, but as researchers at the cutting edge, perhaps you can see a bit further.
-* Another aspect is the ability to consider more outcomes (a larger $|\mathbb{O}_{limited}|$ in our optimization problem) 
+* Another aspect is the ability to consider more outcomes (a larger $\|\mathbb{O}_{limited}\|$ in our optimization problem) 
 
 It is important to note that identifyng great outcomes, and predicting the future are difficult.  There can be a lot of uncertainty and lack of confidence in younger researchers, and it is important for the advisor and community to *nurture* these skills.
 
@@ -317,6 +317,22 @@ Both are suboptimal because it misleads others  (the first case), or deprives ot
 
 Why are papers undermarketed?  My hypothesis is that $E[Impact\|Paper]$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Consider applying an estimation procedure; for instance, sampling from colleagues is a good way of compensating for your internal bias.  
 
+
+
+### <a name="race"></a>The Race to Publish
+
+Often, it can feel like there is a race to be the first to publish before every other research group.  This makes the entire research enterprise feel like a competition, and a [zero sum](https://en.m.wikipedia.org/wiki/Zero-sum_game) game.    You could also argue that a _currently_ hot area is where there will be impact, but the model suggests that it is not the _only_ case.  
+
+It is easy to extend our model to take into account other researchers working on the same problem.  We can assume that every term ($Hypothesis$, $Assumption$, $Outcome$) are all fixed between you and the other researchers, in which case the only term to focus on is your ability to acquire the necessary $Evidence$:
+
+$$\begin{align}
+P(Evidence) =& P(Evidence | You, Others)\\
+            =& (1 - P(Evidence | Others))\times P(Evidence | You) 
+\end{align}$$
+
+This states that the evidence term depends on you and any other researcher, and that if another researcher gets the evidence before you, then your contribute to evidence drops to $0$.  Thus your contribution $P(Evidence\|You)$ needs to be weighed by the probability others can't do the work fast enough.
+
+Given this simple model, it is clear why this is zero sum - your work reduces the impact of others' impact.  As a research community, it signals that there are not enough impactful directions to pursue (e.g., the community is drying up), or that it should prioritize exploratory or "visionary" work.
 
 
 ### <a name="whyresearch"></a>Why Research? 
