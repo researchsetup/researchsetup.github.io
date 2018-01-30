@@ -347,7 +347,7 @@ Given this simple model, it is clear why this is zero sum - your work reduces th
 
 Presumably, you are in a research program because you believe _doing research_ is the best way to maximize this probability:
 
-$$E[Impact | You] = E[Impact | Your\ Research] + E[Impact | Your\ Nonresearch]$$
+$$E[Impact | You] \propto E[Impact | Your\ Research] + E[Impact | Your\ Nonresearch]$$
 
 Clearly there is a strong assumption of the following, based on your desired outcomes:
 
@@ -410,6 +410,10 @@ Japan has a term for this: [Chindōgu](https://en.m.wikipedia.org/wiki/Chind%C5%
 
 $$P(p|you)$$
 -->
+
+### <a name="deep"></a>Deep and Shallow Work
+
+
 
 ### <a name="perfection"></a>Perfection is the Enemy of Progress 
 
