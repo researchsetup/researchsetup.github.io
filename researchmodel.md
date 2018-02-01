@@ -82,7 +82,7 @@ Part of the reason research is fun is because ideas and solutions can come from 
 
 # <a name="thesimplemodel"/>The Model 
 
-Let's start by considering the notion of $Impact$ for a unit of research, meaning the amount that the world changes if a given unit of research is performed.    This is a deliberately vague notion, because $Impact$ is based on your own value system and what you consider important.  This could be happiness, or money, or changing how people think, or anything else.
+Let's start by considering the notion of $Impact$ for a unit of research, meaning the amount that the world changes if a given unit of research is performed.    This is a deliberately vague notion, because $Impact$ is based on your own value system and what you consider important.  This could be happiness, or money, or changing how people think, or [anything else](https://acawiki.org/The_Many_Meanings_of_Research_Utilization).  
 
 For simplicity, let's assume a paper is the unit of research, and we would like to estimate its Impact.  To do so, let's see how it relates to impact, and break down what it takes to produce a paper (unit of research). 
 
