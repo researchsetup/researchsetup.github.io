@@ -51,7 +51,7 @@ Can we decompose research and view it as an optimization problem?  By doing so, 
 This document proposes _one possible_ decomposition based on probabilistic modeling, and uses it as a framing device to comment on research and ideas.
 Remember that it is just one example of systematically modeling and thinking about this topic, and my hope is that it encourages you to reflect on how you can model and think about your own research.  The model is a tool, not an end in of itself.
 
-Other than [the model](#model), the rest of the text is simply a list of examples of how the model can be used.  You can read any topic in any order.
+"This is freaking long!"  It is, but other than [the model](#model), the rest are examples that you can read in _any order_!
 
 <style> .small { font-size: 10pt; }</style>
 {:.small}
