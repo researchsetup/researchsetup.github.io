@@ -29,6 +29,7 @@ General Takeaways
 * [Hammers w/out Nails](#hammer)
 * [Perfection is the Enemy of Progress](#perfection)
 * [Hard Problems vs Simple Problems](#hardprobs)
+* [Effort](#effort)
 * [Academia vs Industry](#industry)
 
 
@@ -423,9 +424,6 @@ Japan has a term for this: [Chindōgu](https://en.m.wikipedia.org/wiki/Chind%C5%
 $$P(p|you)$$
 -->
 
-### <a name="deep"></a>Deep and Shallow Work
-
-
 
 ### <a name="perfection"></a>Perfection is the Enemy of Progress 
 
@@ -460,6 +458,18 @@ A final note: avoiding perfection should not be viewed as discouraging you to st
 Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor, and shows that you're [smart](https://www.youtube.com/watch?v=tcGQpjCztgA).  A hard problem is a paper where the evidence is basically impossible to get.  Solving it supposedly implies that you can solve other hard problems.
 
 Hopefully by this point, it is obvious why problem hardness does not necessarily correlate with high impact, since it says nothing about the other terms (unless the desired outcome is to appear smart).  This is why working on simple problems is actually great, as long as it is carefully selected to maximize impact!
+
+
+### <a name="effort"></a>Effort
+
+Similar to the previous topic, where working on a hard problem may not necessarily mean impact, putting in an enormous amount of effort is similar.
+A widely held belief is that effort is correlated with impact, however notice how effort is not explicitly modeled as a key term in our model.  It is of value (in our model) if it actually affects our terms.
+
+Instead of debating this point, it's worth distinguishing two types of effort that differ based on the ends:
+
+* Self improvement:  you are the ultimate source of the impact that you will create.  Thus, effort devoted towards self-improvement (say, narrowly defined as your ability to maximize any of our model terms) is worth it in the long term, because you will certainly work on multiple projects.
+* External improvement: effort for the sake of a paper or project should be consummerate with the impact it is expected to have.  A good exercise is to extend our model to take effort (resources) into account as an additional objective term.
+
 
 ### <a name="industry"></a>Academia vs Industry 
 
