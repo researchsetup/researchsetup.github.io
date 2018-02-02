@@ -455,7 +455,7 @@ A final note: avoiding perfection should not be viewed as discouraging you to st
 ### <a name="hardprobs"></a>Hard Problems vs Simple Problems 
 
 
-Grad students often worry about not working on "hard problems" because solving hard problems is viewed as a badge of honor, and shows that you're [smart](https://www.youtube.com/watch?v=tcGQpjCztgA).  A hard problem is a paper where the evidence is basically impossible to get.  Solving it supposedly implies that you can solve other hard problems.
+Grad students often prioritize hard problems because it is often viewed as a badge of honor, and shows that you're [smart](https://www.youtube.com/watch?v=tcGQpjCztgA).  A hard problem is a paper where the evidence is basically impossible to get.  Solving it supposedly implies that you can solve other hard problems.
 
 Hopefully by this point, it is obvious why problem hardness does not necessarily correlate with high impact, since it says nothing about the other terms (unless the desired outcome is to appear smart).  This is why working on simple problems is actually great, as long as it is carefully selected to maximize impact!
 
