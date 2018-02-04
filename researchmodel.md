@@ -24,7 +24,6 @@ General Takeaways
 * [The Race to Publish](#race)
 * [Why Research?](#whyresearch)
 * [Unintended Outcomes](#badoutcomes)
-* [The Assistant Professorship](#assprof)
 * [Following the Crowd](#thecrowd)
 * [Hammers w/out Nails](#hammer)
 * [Perfection is the Enemy of Progress](#perfection)
@@ -45,13 +44,13 @@ What does [doing good work](http://www.cs.virginia.edu/~robins/YouAndYourResearc
 There is also a lot of advice floating around -- where does this advice come from?  Is there a model from which most advice emanates?
 How can one systematically reason about the process? 
 
-Can we decompose research and view it as an optimization problem?  By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed as partial mechanisms towards solving this optimization problem?
+<!--Can we decompose research and view it as an optimization problem?  By doing so, can it help us systematically think about how we conduct research?  Can popular advice be viewed as partial mechanisms towards solving this optimization problem?-->
 
 
-This document proposes _one possible_ decomposition based on probabilistic modeling, and uses it as a framing device to comment on research and ideas.
-Remember that it is just one example of systematically modeling and thinking about this topic, and my hope is that it encourages you to reflect on how you can model and think about your own research.  The model is a tool, not an end in of itself.
+This document proposes _one possible_ way to decompose research ideas into a simple model, and uses it as a framing device to comment on research and ideas.  Its purpose is to show this decomposition process as a tool.  Other than [the model](#model), you can read the sections in any order.
 
-"This is freaking long!"  It is, but other than [the model](#model), the rest are examples that you can read in _any order_!
+<!--Remember that it is just one example of systematically modeling and thinking about this topic, and my hope is that it encourages you to reflect on how you can model and think about your own research.  The model is a tool, not an end in of itself.-->
+
 
 <style> .small { font-size: 10pt; }</style>
 {:.small}
@@ -84,11 +83,11 @@ Part of the reason research is fun is because ideas and solutions can come from 
 
 Let's start by considering the notion of $Impact$ for a unit of research, meaning the amount that the world changes if a given unit of research is performed.    This is a deliberately vague notion, because $Impact$ is based on your own value system and what you consider important.  This could be happiness, or money, or changing how people think, or [anything else](https://acawiki.org/The_Many_Meanings_of_Research_Utilization).  
 
-For simplicity, let's assume a paper is the unit of research, and we would like to estimate its Impact.  To do so, let's see how it relates to impact, and break down what it takes to produce a paper (unit of research). 
+We will quantify it as the sum of all possible outcomes, described below.  Further, for simplicity, let's assume a paper is the unit of research, and we would like to estimate its affect on Impact.  
 
 #### Outcomes
 
-We can imagine a possible outcome $o$, which could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc.  Producing a paper changes how likely a given outcome will happen.  In marketing, this is called _lift_, which means how much a treatment (producing the paper) differs from the control.  In our case, we simplify the control to be not accounting for the paper at all:
+We can imagine a possible outcome $o$, which could represent a product, another project, social change; its value could measure profits, social equality, happiness, etc.   Producing a paper changes how likely a given outcome will happen.  In marketing, this is called _lift_, which means how much a treatment (producing the paper) differs from the control.  In our case, we simplify the control to be not accounting for the paper at all:
 
 $$P(o | paper) - P(o)$$
 
@@ -232,7 +231,7 @@ $$E[Impact|Paper] > \tau$$
 
 The threshold $\tau$ is ill defined, but generally "higher-tier" venues have a higher threshold than lower tier venues.  Since it is ill-defined, a common reason to reject a paper is that the paper lacks "originality" or the "contribution is too small".  This can be because the $Outcomes$ are not clearly spelled out, or the connection between the paper's ideas and the outcomes are unclear ($P(o\|Paper) = ?$)
 
-This is where it's important to stop yourself from viewing the submission from an adversarial perspective!  If you could imagine positive outcomes that fall out from the paper, _even if the authors missed them_, then the paper could be worth accepting!  Recall from above that ideas are to be nutured by the PhD process _and the research community_.
+This is where it's important to stop yourself from viewing the submission from an adversarial perspective!  If you could imagine positive outcomes that fall out from the paper, _even if the authors missed them_, then the paper could be worth accepting!  Recall from above that ideas are to be nutured by the PhD process _and the research community_.  Otherwise, we risk holding our field back.
 
 #### <a name="threepapers"></a>3 Types of Papers 
 
@@ -331,12 +330,17 @@ $$P(Reads\ Paper) \propto Marketing = P(Awareness)\times P(Convinced)$$
 
 Viewing "marketing" through an optimization lens helps us think about two common types of sub-optimal strategies (since $P(Convinced)\approx1$):  
 
-1. $Marketing\gg E[Impact]$  Overmarketing is when the amount of awareness is not consummerate with the expected impact of the work on others.  
+1. $Marketing\gg E[Impact]$  Overmarketing is when the amount of awareness is not commensurate with the expected impact of the work on others.  
 1. $Marketing\ll E[impact]$ Arguably a more wide-spread issue is _undermarketing_, where work that could have lots of impact is not marketed enough for people to know about it.   
 
-Both are suboptimal because it misleads others  (the first case), or deprives others from doing impactful work (the second case).  The first case is a waste of resources, but does not reduce the ultimate impact of the paper.  I think the latter case is a bigger issue because it directly reduces the impact of the paper, since people will simply not know about it.  Also, the latter is more widespread and can be ameliorated via training.  
+Both are suboptimal because it misleads others  (the first case), or deprives others from doing impactful work (the second case).  The first case is a waste of resources, and it is easy to focus on the potential outcomes rather than the limitations in the assumptions and what the evidence can actually imply.  
 
-Why are papers undermarketed?  My hypothesis is that $E[Impact\|Paper]$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Consider applying an estimation procedure; for instance, sampling from colleagues is a good way of compensating for your internal bias.  
+I think the latter case is a bigger issue because it directly reduces the impact of the paper, since people will simply not know about it.  Also, the latter is more widespread and can be ameliorated via training.  Why are papers undermarketed?  My hypothesis is that $E[Impact\|Paper]$ is difficult to measure, and the authors are overly conservative in their estimates.  Meaning that the author's perception of their own work is lower than what it actually is.   Since our terms are probabilities, consider applying your favorite estimation procedure; for instance, sampling from colleagues is a good way of compensating for your internal bias.  
+
+{:.example}
+Beyond maintaining a [homepage](http://www.eugenewu.net) (and [lab website](https://cudbg.github.io/lab) after starting at Columbia), I have traditionally undermarketed my work for the same reasons as above: I was not confident whether or not my work mattered.   At Columbia, I promoted my mentees' work, because they deserved it, but otherwise did not do much.    <br/>    
+I took a teaching break Fall 2017, and I forced myself to give a series of talks at friendly universities and companies.  The feedback about our research direction was overwhelmingly kind, positive, and constructive.    That boost of confidence has spurred me to more actively promote my lab, and was the impetus for this document.<br/>   
+I think the lesson is to talk often and talk widely about your work with colleagues you respect.
 
 
 
@@ -390,6 +394,7 @@ The recent research in [automatically generating lipsynced videos](https://www.y
 
 
 
+<!--
 ### <a name="assprof"></a>The Assistant Professorship 
 
 Above, I asserted that a PhD is a certificate, meaning that you are able to execute on a research problem correctly, and can hopefully mentor others to do the same.   Using the model, a narrow way to view the assistant professorship is a selection process that gives you time to show that you can select a set of papers $\mathbb{P}$ to publish such that it is above some threshold $\tau$ decided by your letter writers:
@@ -397,16 +402,15 @@ Above, I asserted that a PhD is a certificate, meaning that you are able to exec
 $$\left(\sum_{paper \in \mathbb{P}} E[Impact | paper]\right) > \tau$$
 
 Check back with me in a couple years to see if this panned out.
+-->
 
 
 ### <a name="thecrowd"></a>Following the Crowd 
 
-Following the crowd means that the $Assumption\approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve, and the desirable outcomes. 
-
-In this setting, one hopes that your ability to collect $Evidence$ far exceeds others', so that you can out-execute others.  
+Following the crowd means that the $Assumption\approx 1$.  If this is the case, it usually means that many researchers are all aware of the problems to solve, and the desirable outcomes.   If this is a rich, unexplored area, then there is no end to the diversity of impactful problems to work on in the area and it is a wonderful opportunity.  However, if it is a relatively narrow area that everyone has been working on, then one hopes that your ability to collect $Evidence$ far exceeds others'.
 
 {:.example}
-It is PhD admissions season and seemingly every applicant wants to do deep learning.  Why?  Because it's in the news (heavily marketed) and sounds exciting (the set of outcomes is perceived to be high). But if faculty are looking for candidates to help them maximize $Impact$, then how can you, as the PhD candidate, signal that you will be the maximizer? Can you show superior evidence gathering?  Or experiment design?  Or Vision and Idea generation?
+During the 2018 PhD admissions season, seemingly every applicant wants to do deep learning.  Why?  Because it's in the news (heavily marketed) and sounds exciting (the set of outcomes is perceived to be high).   But if faculty are looking for candidates to help them maximize $Impact$, then how can you, as the applicant, signal that you will be the maximizer? Can you show superior evidence gathering?  Or experiment design?  Or Vision and Idea generation?
 
 ### <a name="hammer"></a>Hammers Without Nails 
 
